@@ -1,0 +1,14 @@
+C:\code\Web Applications\ONRR\ONRR.Data\obj\Debug\ONRR.Data.csprojResolveAssemblyReference.cache
+C:\code\Web Applications\ONRR\ONRR.Data\bin\QEP.ONRR.Data.dll.config
+C:\code\Web Applications\ONRR\ONRR.Data\bin\QEP.ONRR.Data.dll
+C:\code\Web Applications\ONRR\ONRR.Data\bin\QEP.ONRR.Data.pdb
+C:\code\Web Applications\ONRR\ONRR.Data\bin\AutoMapper.dll
+C:\code\Web Applications\ONRR\ONRR.Data\bin\EntityFramework.dll
+C:\code\Web Applications\ONRR\ONRR.Data\bin\EntityFramework.SqlServer.dll
+C:\code\Web Applications\ONRR\ONRR.Data\bin\log4net.dll
+C:\code\Web Applications\ONRR\ONRR.Data\bin\AutoMapper.xml
+C:\code\Web Applications\ONRR\ONRR.Data\bin\EntityFramework.xml
+C:\code\Web Applications\ONRR\ONRR.Data\bin\EntityFramework.SqlServer.xml
+C:\code\Web Applications\ONRR\ONRR.Data\bin\log4net.xml
+C:\code\Web Applications\ONRR\ONRR.Data\obj\Debug\QEP.ONRR.Data.dll
+C:\code\Web Applications\ONRR\ONRR.Data\obj\Debug\QEP.ONRR.Data.pdb

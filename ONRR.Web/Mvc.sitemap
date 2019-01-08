@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    <mvcSiteMapNode title="Wells" controller="MasterData" action="Wells">
+      <mvcSiteMapNode title="Well Detail" controller="MasterData" action="WellDetail" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Leases" controller="MasterData" action="Leases">
+      <mvcSiteMapNode title="Lease Detail" controller="MasterData" action="LeaseDetail" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Agreements" controller="MasterData" action="Agreements">
+      <mvcSiteMapNode title="Agreement Detail" controller="MasterData" action="AgreementDetail" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Code Tables" controller="MasterData" action="CodeTables">
+      <mvcSiteMapNode title="Code Table Detail" controller="MasterData" action="CodeTableDetail" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Admin" controller="Processing" action="Admin" />
+    <mvcSiteMapNode title="JTran" controller="Processing" action="JTRAN" />
+    <mvcSiteMapNode title="Details" controller="Processing" action="Detail" />
+    <mvcSiteMapNode title="Recoupments" controller="Processing" action="Recoupments" />
+    <mvcSiteMapNode title="Aggregates" controller="Processing" action="Aggregate">
+      <mvcSiteMapNode title="Aggregate Detail" controller="Processing" action="AggregateDetail" preservedRouteParameters="id"/>
+    </mvcSiteMapNode>
+    <mvcSiteMapNode title="Files" controller="Processing" action="Files" />
+    <mvcSiteMapNode title="SAP" controller="Processing" action="SAP" />
+    <mvcSiteMapNode title="Reports" controller="Reports" action="Reports" />
+  </mvcSiteMapNode>
+</mvcSiteMap>

@@ -1,0 +1,1252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QEP.ONRR.Data" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ONRRDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="LeasesSelectAll" ReturnType="Collection(QEP.ONRR.Data.LeasesSelectAll_Result)" />
+    <FunctionImport Name="LeasesDelete">
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeasesInsert">
+      <Parameter Name="ONRRLeaseID" Mode="In" Type="String" />
+      <Parameter Name="BLMSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="QEPLeaseID" Mode="In" Type="String" />
+      <Parameter Name="QEPLeaseName" Mode="In" Type="String" />
+      <Parameter Name="LeaseClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="BIAClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="QEPEffectiveDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="County" Mode="In" Type="String" />
+      <Parameter Name="RoyaltyRate" Mode="In" Type="Decimal" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeasesUpdate">
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+      <Parameter Name="ONRRLeaseID" Mode="In" Type="String" />
+      <Parameter Name="BLMSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="QEPLeaseID" Mode="In" Type="String" />
+      <Parameter Name="QEPLeaseName" Mode="In" Type="String" />
+      <Parameter Name="LeaseClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="BIAClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="QEPEffectiveDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="County" Mode="In" Type="String" />
+      <Parameter Name="RoyaltyRate" Mode="In" Type="Decimal" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeasesSelect" ReturnType="Collection(QEP.ONRR.Data.LeasesSelect_Result)">
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseAgreementSelect" ReturnType="Collection(QEP.ONRR.Data.LeaseAgreementSelect_Result)">
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementsSelectAll" ReturnType="Collection(QEP.ONRR.Data.AgreementsSelectAll_Result)" />
+    <FunctionImport Name="AgreementClassificationsSelectAll" ReturnType="Collection(QEP.ONRR.Data.AgreementClassificationsSelectAll_Result)" />
+    <FunctionImport Name="AgreementTypesSelectAll" ReturnType="Collection(QEP.ONRR.Data.AgreementTypesSelectAll_Result)" />
+    <FunctionImport Name="BIAClassificationsSelectAll" ReturnType="Collection(QEP.ONRR.Data.BIAClassificationsSelectAll_Result)" />
+    <FunctionImport Name="StatesSelectAll" ReturnType="Collection(QEP.ONRR.Data.StatesSelectAll_Result)" />
+    <FunctionImport Name="LeaseAgreementsDelete">
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseAgreementsInsert">
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="TractFactor" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTractFactor" Mode="In" Type="Decimal" />
+      <Parameter Name="MarketShare" Mode="In" Type="Decimal" />
+      <Parameter Name="TractAcreage" Mode="In" Type="Decimal" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseAgreementsUpdate">
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="LeaseID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="TractFactor" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTractFactor" Mode="In" Type="Decimal" />
+      <Parameter Name="MarketShare" Mode="In" Type="Decimal" />
+      <Parameter Name="TractAcreage" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="AccountingMonthInsert">
+      <Parameter Name="OpenDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CloseDate" Mode="In" Type="DateTime" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AccountingMonthSelect" ReturnType="Collection(QEP.ONRR.Data.AccountingMonthSelect_Result)">
+      <Parameter Name="AccountingMonth" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AccountingMonthSelectAll" ReturnType="Collection(QEP.ONRR.Data.AccountingMonthSelectAll_Result)" />
+    <FunctionImport Name="AccountingMonthUpdate">
+      <Parameter Name="AccountingMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="OpenDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CloseDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AdjustmentReasonCodesInsert">
+      <Parameter Name="AdjustmentReasonCode" Mode="In" Type="String" />
+      <Parameter Name="AdjustmentReason" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AdjustmentReasonCodesSelect" ReturnType="Collection(QEP.ONRR.Data.AdjustmentReasonCodesSelect_Result)">
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AdjustmentReasonCodesSelectAll" ReturnType="Collection(QEP.ONRR.Data.AdjustmentReasonCodesSelectAll_Result)" />
+    <FunctionImport Name="AdjustmentReasonCodesUpdate">
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentReasonCode" Mode="In" Type="String" />
+      <Parameter Name="AdjustmentReason" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementClassificationsInsert">
+      <Parameter Name="AgreementClassification" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementClassificationsSelect" ReturnType="Collection(QEP.ONRR.Data.AgreementClassificationsSelect_Result)">
+      <Parameter Name="AgreementClassificationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementClassificationsUpdate">
+      <Parameter Name="AgreementClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementClassification" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementsInsert">
+      <Parameter Name="ONRRAgreementID" Mode="In" Type="String" />
+      <Parameter Name="BLMSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ONRRAgreementDescription" Mode="In" Type="String" />
+      <Parameter Name="Formation" Mode="In" Type="String" />
+      <Parameter Name="AgreementClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="TotalAcreage" Mode="In" Type="Decimal" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementsSelect" ReturnType="Collection(QEP.ONRR.Data.AgreementsSelect_Result)">
+      <Parameter Name="AgreementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementsUpdate">
+      <Parameter Name="AgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ONRRAgreementID" Mode="In" Type="String" />
+      <Parameter Name="BLMSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="ONRRAgreementDescription" Mode="In" Type="String" />
+      <Parameter Name="Formation" Mode="In" Type="String" />
+      <Parameter Name="AgreementClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="TotalAcreage" Mode="In" Type="Decimal" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementTypesInsert">
+      <Parameter Name="AgreementType" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementTypesSelect" ReturnType="Collection(QEP.ONRR.Data.AgreementTypesSelect_Result)">
+      <Parameter Name="AgreementTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementTypesUpdate">
+      <Parameter Name="AgreementTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="AgreementType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="BIAClassificationsInsert">
+      <Parameter Name="BIAClassification" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="BIAClassificationsSelect" ReturnType="Collection(QEP.ONRR.Data.BIAClassificationsSelect_Result)">
+      <Parameter Name="BIAClassificationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="BIAClassificationsUpdate">
+      <Parameter Name="BIAClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="BIAClassification" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CompanyPayorCodesInsert">
+      <Parameter Name="QRACompanyCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ONRRPayorCode" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CompanyPayorCodesSelect" ReturnType="Collection(QEP.ONRR.Data.CompanyPayorCodesSelect_Result)">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CompanyPayorCodesSelectAll" ReturnType="Collection(QEP.ONRR.Data.CompanyPayorCodesSelectAll_Result)" />
+    <FunctionImport Name="CompanyPayorCodesUpdate">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="QRACompanyCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ONRRPayorCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="JTRN_SL_DETAILInsert">
+      <Parameter Name="OPER_BUS_SEG_CD" Mode="In" Type="String" />
+      <Parameter Name="ACCTG_MTH" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCT_NO" Mode="In" Type="String" />
+      <Parameter Name="TRANS_VAL_AMT" Mode="In" Type="Decimal" />
+      <Parameter Name="TRANS_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="BTU_FACT" Mode="In" Type="Decimal" />
+      <Parameter Name="GRS_AMT" Mode="In" Type="Decimal" />
+      <Parameter Name="GRS_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="MAJ_PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="OWNR_BA_NO" Mode="In" Type="String" />
+      <Parameter Name="OWNR_INT_DEC" Mode="In" Type="Decimal" />
+      <Parameter Name="CTR_PTY_NO" Mode="In" Type="String" />
+      <Parameter Name="PROP_NO" Mode="In" Type="String" />
+      <Parameter Name="DO_TYPE_CD" Mode="In" Type="String" />
+      <Parameter Name="DO_MAJ_PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="TIER" Mode="In" Type="Int32" />
+      <Parameter Name="PPN_RSN_CD" Mode="In" Type="String" />
+      <Parameter Name="PRDN_DT" Mode="In" Type="DateTime" />
+      <Parameter Name="ST_CD" Mode="In" Type="String" />
+      <Parameter Name="MMBTU_OWNR_VOL" Mode="In" Type="Decimal" />
+      <Parameter Name="WELL_NO" Mode="In" Type="String" />
+      <Parameter Name="COMPL_NO" Mode="In" Type="String" />
+      <Parameter Name="DISP_CD" Mode="In" Type="String" />
+      <Parameter Name="NET_VOL" Mode="In" Type="Decimal" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="JTRN_SL_DETAILSelect" ReturnType="Collection(QEP.ONRR.Data.JTRN_SL_DETAILSelect_Result)">
+      <Parameter Name="SL_DETAIL_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="JTRN_SL_DETAILSelectAll" ReturnType="Collection(QEP.ONRR.Data.JTRN_SL_DETAILSelectAll_Result)" />
+    <FunctionImport Name="JTRN_SL_DETAILUpdate">
+      <Parameter Name="SL_DETAIL_NO" Mode="In" Type="Int64" />
+      <Parameter Name="OPER_BUS_SEG_CD" Mode="In" Type="String" />
+      <Parameter Name="ACCTG_MTH" Mode="In" Type="DateTime" />
+      <Parameter Name="ACCT_NO" Mode="In" Type="String" />
+      <Parameter Name="TRANS_VAL_AMT" Mode="In" Type="Decimal" />
+      <Parameter Name="TRANS_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="BTU_FACT" Mode="In" Type="Decimal" />
+      <Parameter Name="GRS_AMT" Mode="In" Type="Decimal" />
+      <Parameter Name="GRS_QTY" Mode="In" Type="Decimal" />
+      <Parameter Name="MAJ_PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="OWNR_BA_NO" Mode="In" Type="String" />
+      <Parameter Name="OWNR_INT_DEC" Mode="In" Type="Decimal" />
+      <Parameter Name="CTR_PTY_NO" Mode="In" Type="String" />
+      <Parameter Name="PROP_NO" Mode="In" Type="String" />
+      <Parameter Name="DO_TYPE_CD" Mode="In" Type="String" />
+      <Parameter Name="DO_MAJ_PROD_CD" Mode="In" Type="String" />
+      <Parameter Name="TIER" Mode="In" Type="Int32" />
+      <Parameter Name="PPN_RSN_CD" Mode="In" Type="String" />
+      <Parameter Name="PRDN_DT" Mode="In" Type="DateTime" />
+      <Parameter Name="ST_CD" Mode="In" Type="String" />
+      <Parameter Name="MMBTU_OWNR_VOL" Mode="In" Type="Decimal" />
+      <Parameter Name="WELL_NO" Mode="In" Type="String" />
+      <Parameter Name="COMPL_NO" Mode="In" Type="String" />
+      <Parameter Name="DISP_CD" Mode="In" Type="String" />
+      <Parameter Name="NET_VOL" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseAgreementsSelect" ReturnType="Collection(QEP.ONRR.Data.LeaseAgreementsSelect_Result)">
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseAgreementsSelectAll" ReturnType="Collection(QEP.ONRR.Data.LeaseAgreementsSelectAll_Result)" />
+    <FunctionImport Name="LeaseClassificationsInsert">
+      <Parameter Name="QLSClassificationID" Mode="In" Type="String" />
+      <Parameter Name="Classification" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseClassificationsSelect" ReturnType="Collection(QEP.ONRR.Data.LeaseClassificationsSelect_Result)">
+      <Parameter Name="LeaseClassificationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="LeaseClassificationsSelectAll" ReturnType="Collection(QEP.ONRR.Data.LeaseClassificationsSelectAll_Result)" />
+    <FunctionImport Name="LeaseClassificationsUpdate">
+      <Parameter Name="LeaseClassificationID" Mode="In" Type="Int32" />
+      <Parameter Name="QLSClassificationID" Mode="In" Type="String" />
+      <Parameter Name="Classification" Mode="In" Type="String" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRAggregateInsert">
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductionMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="GasMMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="TransortationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="ProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="NetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="FileID" Mode="In" Type="Int32" />
+      <Parameter Name="PADNumber" Mode="In" Type="String" />
+      <Parameter Name="PayorCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="StatusID" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentMethodID" Mode="In" Type="Int32" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRAggregateSelect" ReturnType="Collection(QEP.ONRR.Data.ONRRAggregateSelect_Result)">
+      <Parameter Name="AggregateID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRAggregateSelectAll" ReturnType="Collection(QEP.ONRR.Data.ONRRAggregateSelectAll_Result)" />
+    <FunctionImport Name="ONRRAggregateUpdate">
+      <Parameter Name="AggregateID" Mode="In" Type="Int32" />
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductionMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="GasMMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="TransortationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="ProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="NetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="FileID" Mode="In" Type="Int32" />
+      <Parameter Name="PADNumber" Mode="In" Type="String" />
+      <Parameter Name="PayorCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="StatusID" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentMethodID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRDetailInsert">
+      <Parameter Name="ONRRDetailID" Mode="In" Type="Int32" />
+      <Parameter Name="GrossAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="TransactionValueAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransactionValueAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="TransactionQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransactionQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyMarketedVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideCompanyMarketedVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="CompanyMarketedValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideCompanyMarketedValue" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideSalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="MMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideMMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideSalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="TransportationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransportationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="ProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="NetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideNetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="AggregateID" Mode="In" Type="Int32" />
+      <Parameter Name="ReversalAggregateID" Mode="In" Type="Int32" />
+      <Parameter Name="AccountingMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="ProductionMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="ProcessingStatusID" Mode="In" Type="Int32" />
+      <Parameter Name="SuspendReasonID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="ReversalDetailID" Mode="In" Type="Int32" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRDetailSelect" ReturnType="Collection(QEP.ONRR.Data.ONRRDetailSelect_Result)">
+      <Parameter Name="ONRRDetailID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRDetailSelectAll" ReturnType="Collection(QEP.ONRR.Data.ONRRDetailSelectAll_Result)" />
+    <FunctionImport Name="ONRRDetailUpdate">
+      <Parameter Name="ONRRDetailID" Mode="In" Type="Int32" />
+      <Parameter Name="SL_DETAIL_NO" Mode="In" Type="Int64" />
+      <Parameter Name="GrossAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="TransactionValueAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransactionValueAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="TransactionQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransactionQuantity" Mode="In" Type="Decimal" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyMarketedVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideCompanyMarketedVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="CompanyMarketedValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideCompanyMarketedValue" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideSalesVolume" Mode="In" Type="Decimal" />
+      <Parameter Name="MMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideMMBTU" Mode="In" Type="Decimal" />
+      <Parameter Name="SalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideSalesValue" Mode="In" Type="Decimal" />
+      <Parameter Name="GrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideGrossRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="TransportationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideTransportationAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="ProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideProcessingAllowanceDeduction" Mode="In" Type="Decimal" />
+      <Parameter Name="NetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="OverrideNetRoyaltyValue" Mode="In" Type="Decimal" />
+      <Parameter Name="AggregateID" Mode="In" Type="Int32" />
+      <Parameter Name="ReversalAggregateID" Mode="In" Type="Int32" />
+      <Parameter Name="AccountingMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="ProductionMonth" Mode="In" Type="DateTime" />
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentReasonCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="ProcessingStatusID" Mode="In" Type="Int32" />
+      <Parameter Name="SuspendReasonID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="ReversalDetailID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRFilesInsert">
+      <Parameter Name="FileStatusID" Mode="In" Type="Int32" />
+      <Parameter Name="GenerationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AcceptedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRFilesSelect" ReturnType="Collection(QEP.ONRR.Data.ONRRFilesSelect_Result)">
+      <Parameter Name="FileID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRFilesSelectAll" ReturnType="Collection(QEP.ONRR.Data.ONRRFilesSelectAll_Result)" />
+    <FunctionImport Name="ONRRFilesUpdate">
+      <Parameter Name="FileID" Mode="In" Type="Int32" />
+      <Parameter Name="FileStatusID" Mode="In" Type="Int32" />
+      <Parameter Name="GenerationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="AcceptedDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRTransactionCodesInsert">
+      <Parameter Name="ONRRTransactionCode" Mode="In" Type="String" />
+      <Parameter Name="ProductCode" Mode="In" Type="String" />
+      <Parameter Name="DispositionCode" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRTransactionCodesSelect" ReturnType="Collection(QEP.ONRR.Data.ONRRTransactionCodesSelect_Result)">
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRTransactionCodesSelectAll" ReturnType="Collection(QEP.ONRR.Data.ONRRTransactionCodesSelectAll_Result)" />
+    <FunctionImport Name="ONRRTransactionCodesUpdate">
+      <Parameter Name="TransactionCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="ONRRTransactionCode" Mode="In" Type="String" />
+      <Parameter Name="ProductCode" Mode="In" Type="String" />
+      <Parameter Name="DispositionCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PaymentMethodsInsert">
+      <Parameter Name="PaymentMethod" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PaymentMethodsSelect" ReturnType="Collection(QEP.ONRR.Data.PaymentMethodsSelect_Result)">
+      <Parameter Name="PaymentMethodID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PaymentMethodsSelectAll" ReturnType="Collection(QEP.ONRR.Data.PaymentMethodsSelectAll_Result)" />
+    <FunctionImport Name="PaymentMethodsUpdate">
+      <Parameter Name="PaymentMethodID" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentMethod" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PayorCodesInsert">
+      <Parameter Name="PayorCode" Mode="In" Type="String" />
+      <Parameter Name="Payor" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PayorCodesSelect" ReturnType="Collection(QEP.ONRR.Data.PayorCodesSelect_Result)">
+      <Parameter Name="PayorCodeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PayorCodesSelectAll" ReturnType="Collection(QEP.ONRR.Data.PayorCodesSelectAll_Result)" />
+    <FunctionImport Name="PayorCodesUpdate">
+      <Parameter Name="PayorCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="PayorCode" Mode="In" Type="String" />
+      <Parameter Name="Payor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProductCodeCrossReferenceInsert">
+      <Parameter Name="ONRRProductCode" Mode="In" Type="String" />
+      <Parameter Name="QRAMajorProductCode" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProductCodeCrossReferenceSelect" ReturnType="Collection(QEP.ONRR.Data.ProductCodeCrossReferenceSelect_Result)">
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ProductCodeCrossReferenceSelectAll" ReturnType="Collection(QEP.ONRR.Data.ProductCodeCrossReferenceSelectAll_Result)" />
+    <FunctionImport Name="ProductCodeCrossReferenceUpdate">
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="ONRRProductCode" Mode="In" Type="String" />
+      <Parameter Name="QRAMajorProductCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RevenueDeductionsInsert">
+      <Parameter Name="AdjustmentCategoryCode" Mode="In" Type="String" />
+      <Parameter Name="AdjustmentCategory" Mode="In" Type="String" />
+      <Parameter Name="LandExemptFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="MMSTransportationDeductFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="NMEXTransportationDeductFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="MMSProcessingAllowanceFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="NMEXProcessingAllowanceFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="AllocationOrder" Mode="In" Type="Int32" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RevenueDeductionsSelect" ReturnType="Collection(QEP.ONRR.Data.RevenueDeductionsSelect_Result)">
+      <Parameter Name="RevenueDeductionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RevenueDeductionsSelectAll" ReturnType="Collection(QEP.ONRR.Data.RevenueDeductionsSelectAll_Result)" />
+    <FunctionImport Name="RevenueDeductionsUpdate">
+      <Parameter Name="RevenueDeductionID" Mode="In" Type="Int32" />
+      <Parameter Name="AdjustmentCategoryCode" Mode="In" Type="String" />
+      <Parameter Name="AdjustmentCategory" Mode="In" Type="String" />
+      <Parameter Name="LandExemptFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="MMSTransportationDeductFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="NMEXTransportationDeductFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="MMSProcessingAllowanceFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="NMEXProcessingAllowanceFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="AllocationOrder" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SalesTypesInsert">
+      <Parameter Name="SalesType" Mode="In" Type="String" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SalesTypesSelect" ReturnType="Collection(QEP.ONRR.Data.SalesTypesSelect_Result)">
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SalesTypesSelectAll" ReturnType="Collection(QEP.ONRR.Data.SalesTypesSelectAll_Result)" />
+    <FunctionImport Name="SalesTypesUpdate">
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="StatesInsert">
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="PressureBase" Mode="In" Type="Decimal" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="StatesSelect" ReturnType="Collection(QEP.ONRR.Data.StatesSelect_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="StatesUpdate">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="PressureBase" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="WellCompletionsInsert">
+      <Parameter Name="PropertyNumber" Mode="In" Type="String" />
+      <Parameter Name="WellAcreage" Mode="In" Type="Decimal" />
+      <Parameter Name="WellCompletionName" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="API" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="PropertyName" Mode="In" Type="String" />
+      <Parameter Name="GrossMarketedInterest" Mode="In" Type="Decimal" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WellCompletionsSelect" ReturnType="Collection(QEP.ONRR.Data.WellCompletionsSelect_Result)">
+      <Parameter Name="WellCompletionID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WellCompletionsSelectAll" ReturnType="Collection(QEP.ONRR.Data.WellCompletionsSelectAll_Result)" />
+    <FunctionImport Name="WellCompletionsUpdate">
+      <Parameter Name="WellCompletionID" Mode="In" Type="String" />
+      <Parameter Name="PropertyNumber" Mode="In" Type="String" />
+      <Parameter Name="WellAcreage" Mode="In" Type="Decimal" />
+      <Parameter Name="WellCompletionName" Mode="In" Type="String" />
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+      <Parameter Name="API" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="PropertyName" Mode="In" Type="String" />
+      <Parameter Name="GrossMarketedInterest" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="WellLeaseAgreementsInsert">
+      <Parameter Name="WellCompletionID" Mode="In" Type="String" />
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+      <Parameter Name="NewID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WellLeaseAgreementsSelect" ReturnType="Collection(QEP.ONRR.Data.WellLeaseAgreementsSelect_Result)">
+      <Parameter Name="WellLeaseAgreementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WellLeaseAgreementsSelectAll" ReturnType="Collection(QEP.ONRR.Data.WellLeaseAgreementsSelectAll_Result)" />
+    <FunctionImport Name="WellLeaseAgreementsUpdate">
+      <Parameter Name="WellLeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="WellCompletionID" Mode="In" Type="String" />
+      <Parameter Name="LeaseAgreementID" Mode="In" Type="Int32" />
+      <Parameter Name="ProductCodeID" Mode="In" Type="Int32" />
+      <Parameter Name="SalesTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="EffectiveFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="EffectiveTo" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AgreementLeaseSelect" ReturnType="Collection(QEP.ONRR.Data.AgreementLeaseSelect_Result)">
+      <Parameter Name="AgreementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="WellLeaseAgreementSelectByWell" ReturnType="Collection(QEP.ONRR.Data.WellLeaseAgreementSelectByWell_Result)">
+      <Parameter Name="WellCompletionID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AccountingMonthCurrentSelect" ReturnType="Collection(DateTime)" />
+    <FunctionImport Name="ONRRDetailSelectByAggregate" ReturnType="Collection(QEP.ONRR.Data.ONRRDetailSelectByAggregate_Result)">
+      <Parameter Name="AggregateID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ONRRDetailSelectFiltered" ReturnType="Collection(QEP.ONRR.Data.ONRRDetailSelectFiltered_Result)">
+      <Parameter Name="StateCode" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="LeasesSelectAll_Result">
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="String" Name="ONRRLeaseID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="BLMSerialNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QEPLeaseID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QEPLeaseName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="LeaseClassificationID" Nullable="false" />
+    <Property Type="Int32" Name="BIAClassificationID" Nullable="true" />
+    <Property Type="DateTime" Name="QEPEffectiveDate" Nullable="true" />
+    <Property Type="String" Name="StateCode" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="County" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="RoyaltyRate" Nullable="false" Precision="11" Scale="8" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="BIAClassification" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Classification" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="LeasesSelect_Result">
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="String" Name="ONRRLeaseID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="BLMSerialNumber" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QEPLeaseID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QEPLeaseName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="LeaseClassificationID" Nullable="false" />
+    <Property Type="Int32" Name="BIAClassificationID" Nullable="true" />
+    <Property Type="DateTime" Name="QEPEffectiveDate" Nullable="true" />
+    <Property Type="String" Name="StateCode" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="County" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="RoyaltyRate" Nullable="false" Precision="11" Scale="8" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BIAClassification" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Classification" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="LeaseAgreementSelect_Result">
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="String" Name="QEPLeaseName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="AgreementID" Nullable="true" />
+    <Property Type="String" Name="ONRRAgreementDescription" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Decimal" Name="TractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="OverrideTractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="MarketShare" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="TractAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="String" Name="Formation" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="AgreementsSelectAll_Result">
+    <Property Type="Int32" Name="AgreementID" Nullable="false" />
+    <Property Type="String" Name="ONRRAgreementID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BLMSerialNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRAgreementDescription" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Formation" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="AgreementClassificationID" Nullable="false" />
+    <Property Type="Int32" Name="AgreementTypeID" Nullable="false" />
+    <Property Type="Decimal" Name="TotalAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="AgreementClassification" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AgreementType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="AgreementClassificationsSelectAll_Result">
+    <Property Type="Int32" Name="AgreementClassificationID" Nullable="false" />
+    <Property Type="String" Name="AgreementClassification" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AgreementTypesSelectAll_Result">
+    <Property Type="Int32" Name="AgreementTypeID" Nullable="false" />
+    <Property Type="String" Name="AgreementType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="BIAClassificationsSelectAll_Result">
+    <Property Type="Int32" Name="BIAClassificationID" Nullable="false" />
+    <Property Type="String" Name="BIAClassification" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="StatesSelectAll_Result">
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="STATE" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="PressureBase" Nullable="false" Precision="10" Scale="5" />
+  </ComplexType>
+  <ComplexType Name="AccountingMonthSelect_Result">
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="OpenDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="CloseDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="AccountingMonthSelectAll_Result">
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="OpenDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="CloseDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="AdjustmentReasonCodesSelect_Result">
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="false" />
+    <Property Type="String" Name="AdjustmentReasonCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="AdjustmentReasonCodesSelectAll_Result">
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="false" />
+    <Property Type="String" Name="AdjustmentReasonCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="AgreementClassificationsSelect_Result">
+    <Property Type="Int32" Name="AgreementClassificationID" Nullable="false" />
+    <Property Type="String" Name="AgreementClassification" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="AgreementsSelect_Result">
+    <Property Type="Int32" Name="AgreementID" Nullable="false" />
+    <Property Type="String" Name="ONRRAgreementID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BLMSerialNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRAgreementDescription" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Formation" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="AgreementClassificationID" Nullable="false" />
+    <Property Type="Int32" Name="AgreementTypeID" Nullable="false" />
+    <Property Type="Decimal" Name="TotalAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="AgreementClassification" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AgreementType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="AgreementTypesSelect_Result">
+    <Property Type="Int32" Name="AgreementTypeID" Nullable="false" />
+    <Property Type="String" Name="AgreementType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="BIAClassificationsSelect_Result">
+    <Property Type="Int32" Name="BIAClassificationID" Nullable="false" />
+    <Property Type="String" Name="BIAClassification" Nullable="false" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="CompanyPayorCodesSelect_Result">
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="QRACompanyCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="ONRRPayorCode" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="CompanyPayorCodesSelectAll_Result">
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="QRACompanyCode" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="ONRRPayorCode" Nullable="false" MaxLength="15" />
+  </ComplexType>
+  <ComplexType Name="JTRN_SL_DETAILSelect_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="String" Name="OPER_BUS_SEG_CD" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="ACCTG_MTH" Nullable="false" Precision="23" />
+    <Property Type="String" Name="ACCT_NO" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="TRANS_VAL_AMT" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TRANS_QTY" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="BTU_FACT" Nullable="true" Precision="12" Scale="3" />
+    <Property Type="Decimal" Name="GRS_AMT" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GRS_QTY" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="String" Name="MAJ_PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OWNR_BA_NO" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="OWNR_INT_DEC" Nullable="true" Precision="11" Scale="10" />
+    <Property Type="String" Name="CTR_PTY_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PROP_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DO_TYPE_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="DO_MAJ_PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="Int32" Name="TIER" Nullable="true" />
+    <Property Type="String" Name="PPN_RSN_CD" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="PRDN_DT" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ST_CD" Nullable="true" MaxLength="2" />
+    <Property Type="Decimal" Name="MMBTU_OWNR_VOL" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="String" Name="WELL_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="COMPL_NO" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="ADJ_CTGY_CD" Nullable="false" MaxLength="2" />
+    <Property Type="Decimal" Name="NET_AMT" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="String" Name="DISP_CD" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="NET_VOL" Nullable="true" Precision="13" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="JTRN_SL_DETAILSelectAll_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="String" Name="OPER_BUS_SEG_CD" Nullable="false" MaxLength="6" />
+    <Property Type="DateTime" Name="ACCTG_MTH" Nullable="false" Precision="23" />
+    <Property Type="String" Name="ACCT_NO" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="TRANS_VAL_AMT" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TRANS_QTY" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="BTU_FACT" Nullable="true" Precision="12" Scale="3" />
+    <Property Type="Decimal" Name="GRS_AMT" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GRS_QTY" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="String" Name="MAJ_PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="OWNR_BA_NO" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="OWNR_INT_DEC" Nullable="true" Precision="11" Scale="10" />
+    <Property Type="String" Name="CTR_PTY_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PROP_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DO_TYPE_CD" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="DO_MAJ_PROD_CD" Nullable="true" MaxLength="3" />
+    <Property Type="Int32" Name="TIER" Nullable="true" />
+    <Property Type="String" Name="PPN_RSN_CD" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="PRDN_DT" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ST_CD" Nullable="true" MaxLength="2" />
+    <Property Type="Decimal" Name="MMBTU_OWNR_VOL" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="String" Name="WELL_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="COMPL_NO" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="ADJ_CTGY_CD" Nullable="false" MaxLength="2" />
+    <Property Type="Decimal" Name="NET_AMT" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="String" Name="DISP_CD" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="NET_VOL" Nullable="true" Precision="13" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="LeaseAgreementsSelect_Result">
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="Int32" Name="AgreementID" Nullable="true" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Decimal" Name="TractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="OverrideTractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="MarketShare" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="TractAcreage" Nullable="true" Precision="10" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="LeaseAgreementsSelectAll_Result">
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="Int32" Name="AgreementID" Nullable="true" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Decimal" Name="TractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="OverrideTractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="MarketShare" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="TractAcreage" Nullable="true" Precision="10" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="LeaseClassificationsSelect_Result">
+    <Property Type="Int32" Name="LeaseClassificationID" Nullable="false" />
+    <Property Type="String" Name="QLSClassificationID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Classification" Nullable="false" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="LeaseClassificationsSelectAll_Result">
+    <Property Type="Int32" Name="LeaseClassificationID" Nullable="false" />
+    <Property Type="String" Name="QLSClassificationID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Classification" Nullable="false" MaxLength="250" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="ONRRAggregateSelect_Result">
+    <Property Type="Int32" Name="AggregateID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GasMMBTU" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransortationAllowanceDeduction" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="PADNumber" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="PayorCodeID" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodID" Nullable="true" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Payor" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="PaymentMethod" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="ONRRAggregateSelectAll_Result">
+    <Property Type="Int32" Name="AggregateID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GasMMBTU" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransortationAllowanceDeduction" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="FileID" Nullable="false" />
+    <Property Type="String" Name="PADNumber" Nullable="true" MaxLength="8" />
+    <Property Type="Int32" Name="PayorCodeID" Nullable="true" />
+    <Property Type="Int32" Name="StatusID" Nullable="false" />
+    <Property Type="Int32" Name="PaymentMethodID" Nullable="true" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="Payor" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="PaymentMethod" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="ONRRDetailSelect_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="Decimal" Name="GrossAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionValueAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionValueAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="Decimal" Name="CompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="CompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="MMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideMMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="true" Precision="13" Scale="0" />
+    <Property Type="Decimal" Name="OverrideNetRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="AggregateID" Nullable="true" />
+    <Property Type="Int32" Name="ReversalAggregateID" Nullable="true" />
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="Int32" Name="ProcessingStatusID" Nullable="false" />
+    <Property Type="Int32" Name="SuspendReasonID" Nullable="true" />
+    <Property Type="Int32" Name="ONRRDetailID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ReversalDetailID" Nullable="true" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ONRRDetailSelectAll_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="Decimal" Name="GrossAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionValueAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionValueAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="Decimal" Name="CompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="CompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="MMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideMMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="true" Precision="13" Scale="0" />
+    <Property Type="Decimal" Name="OverrideNetRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="AggregateID" Nullable="true" />
+    <Property Type="Int32" Name="ReversalAggregateID" Nullable="true" />
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="Int32" Name="ProcessingStatusID" Nullable="false" />
+    <Property Type="Int32" Name="SuspendReasonID" Nullable="true" />
+    <Property Type="Int32" Name="ONRRDetailID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="Int32" Name="ReversalDetailID" Nullable="true" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="ONRRFilesSelect_Result">
+    <Property Type="Int32" Name="FileID" Nullable="false" />
+    <Property Type="Int32" Name="FileStatusID" Nullable="false" />
+    <Property Type="DateTime" Name="GenerationDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="AcceptedDate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ONRRFilesSelectAll_Result">
+    <Property Type="Int32" Name="FileID" Nullable="false" />
+    <Property Type="Int32" Name="FileStatusID" Nullable="false" />
+    <Property Type="DateTime" Name="GenerationDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="AcceptedDate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ONRRTransactionCodesSelect_Result">
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="DispositionCode" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ONRRTransactionCodesSelectAll_Result">
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="DispositionCode" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="PaymentMethodsSelect_Result">
+    <Property Type="Int32" Name="PaymentMethodID" Nullable="false" />
+    <Property Type="String" Name="PaymentMethod" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="PaymentMethodsSelectAll_Result">
+    <Property Type="Int32" Name="PaymentMethodID" Nullable="false" />
+    <Property Type="String" Name="PaymentMethod" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="PayorCodesSelect_Result">
+    <Property Type="Int32" Name="PayorCodeID" Nullable="false" />
+    <Property Type="String" Name="PayorCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Payor" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="PayorCodesSelectAll_Result">
+    <Property Type="Int32" Name="PayorCodeID" Nullable="false" />
+    <Property Type="String" Name="PayorCode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Payor" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="ProductCodeCrossReferenceSelect_Result">
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ProductCodeCrossReferenceSelectAll_Result">
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="RevenueDeductionsSelect_Result">
+    <Property Type="Int32" Name="RevenueDeductionID" Nullable="false" />
+    <Property Type="String" Name="AdjustmentCategoryCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="AdjustmentCategory" Nullable="false" MaxLength="60" />
+    <Property Type="Boolean" Name="LandExemptFlag" Nullable="true" />
+    <Property Type="Boolean" Name="MMSTransportationDeductFlag" Nullable="false" />
+    <Property Type="Boolean" Name="NMEXTransportationDeductFlag" Nullable="false" />
+    <Property Type="Boolean" Name="MMSProcessingAllowanceFlag" Nullable="false" />
+    <Property Type="Boolean" Name="NMEXProcessingAllowanceFlag" Nullable="false" />
+    <Property Type="Int32" Name="AllocationOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="RevenueDeductionsSelectAll_Result">
+    <Property Type="Int32" Name="RevenueDeductionID" Nullable="false" />
+    <Property Type="String" Name="AdjustmentCategoryCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="AdjustmentCategory" Nullable="false" MaxLength="60" />
+    <Property Type="Boolean" Name="LandExemptFlag" Nullable="true" />
+    <Property Type="Boolean" Name="MMSTransportationDeductFlag" Nullable="false" />
+    <Property Type="Boolean" Name="NMEXTransportationDeductFlag" Nullable="false" />
+    <Property Type="Boolean" Name="MMSProcessingAllowanceFlag" Nullable="false" />
+    <Property Type="Boolean" Name="NMEXProcessingAllowanceFlag" Nullable="false" />
+    <Property Type="Int32" Name="AllocationOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SalesTypesSelect_Result">
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SalesTypesSelectAll_Result">
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="StatesSelect_Result">
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="STATE" Nullable="false" MaxLength="50" />
+    <Property Type="Decimal" Name="PressureBase" Nullable="false" Precision="10" Scale="5" />
+  </ComplexType>
+  <ComplexType Name="WellCompletionsSelect_Result">
+    <Property Type="String" Name="WellCompletionID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="PropertyNumber" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="WellAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="String" Name="WellCompletionName" Nullable="false" MaxLength="60" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="API" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="PropertyName" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="GrossMarketedInterest" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WellCompletionsSelectAll_Result">
+    <Property Type="String" Name="WellCompletionID" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="PropertyNumber" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="WellAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="String" Name="WellCompletionName" Nullable="false" MaxLength="60" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="API" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="Company" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="PropertyName" Nullable="false" MaxLength="250" />
+    <Property Type="Decimal" Name="GrossMarketedInterest" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="WellLeaseAgreementsSelect_Result">
+    <Property Type="Int32" Name="WellLeaseAgreementID" Nullable="false" />
+    <Property Type="String" Name="WellCompletionID" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="WellLeaseAgreementsSelectAll_Result">
+    <Property Type="Int32" Name="WellLeaseAgreementID" Nullable="false" />
+    <Property Type="String" Name="WellCompletionID" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="AgreementLeaseSelect_Result">
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="LeaseID" Nullable="false" />
+    <Property Type="String" Name="QEPLeaseName" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="AgreementID" Nullable="true" />
+    <Property Type="String" Name="ONRRAgreementDescription" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="Decimal" Name="TractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="OverrideTractFactor" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="MarketShare" Nullable="true" Precision="9" Scale="8" />
+    <Property Type="Decimal" Name="TractAcreage" Nullable="true" Precision="10" Scale="4" />
+    <Property Type="String" Name="Formation" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="WellLeaseAgreementSelectByWell_Result">
+    <Property Type="Int32" Name="WellLeaseAgreementID" Nullable="false" />
+    <Property Type="String" Name="WellCompletionID" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveFrom" Nullable="false" />
+    <Property Type="DateTime" Name="EffectiveTo" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+  </ComplexType>
+  <ComplexType Name="ONRRDetailSelectByAggregate_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="Decimal" Name="GrossAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionValueAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionValueAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="CompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="MMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideMMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="true" Precision="13" Scale="0" />
+    <Property Type="Decimal" Name="OverrideNetRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="AggregateID" Nullable="true" />
+    <Property Type="Int32" Name="ReversalAggregateID" Nullable="true" />
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="ProcessingStatusID" Nullable="false" />
+    <Property Type="Int32" Name="SuspendReasonID" Nullable="true" />
+    <Property Type="Int32" Name="ONRRDetailID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ReversalDetailID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="ONRRDetailSelectFiltered_Result">
+    <Property Type="Int64" Name="SL_DETAIL_NO" Nullable="false" />
+    <Property Type="Decimal" Name="GrossAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionValueAmount" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionValueAmount" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransactionQuantity" Nullable="false" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransactionQuantity" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="Price" Nullable="true" Precision="6" Scale="2" />
+    <Property Type="Int32" Name="LeaseAgreementID" Nullable="false" />
+    <Property Type="Int32" Name="ProductCodeID" Nullable="false" />
+    <Property Type="String" Name="ONRRProductCode" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="QRAMajorProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="StateCode" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="CompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="CompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideCompanyMarketedValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesVolume" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="MMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideMMBTU" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="SalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideSalesValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="GrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideGrossRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="TransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideTransportationAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="ProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="OverrideProcessingAllowanceDeduction" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Decimal" Name="NetRoyaltyValue" Nullable="true" Precision="13" Scale="0" />
+    <Property Type="Decimal" Name="OverrideNetRoyaltyValue" Nullable="true" Precision="13" Scale="2" />
+    <Property Type="Int32" Name="AggregateID" Nullable="true" />
+    <Property Type="Int32" Name="ReversalAggregateID" Nullable="true" />
+    <Property Type="DateTime" Name="AccountingMonth" Nullable="false" />
+    <Property Type="DateTime" Name="ProductionMonth" Nullable="false" />
+    <Property Type="Int32" Name="TransactionCodeID" Nullable="false" />
+    <Property Type="String" Name="DispositionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ONRRTransactionCode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="ProductCode" Nullable="true" MaxLength="5" />
+    <Property Type="Int32" Name="AdjustmentReasonCodeID" Nullable="true" />
+    <Property Type="String" Name="AdjustmentReason" Nullable="true" MaxLength="60" />
+    <Property Type="Int32" Name="ProcessingStatusID" Nullable="false" />
+    <Property Type="Int32" Name="SuspendReasonID" Nullable="true" />
+    <Property Type="Int32" Name="ONRRDetailID" Nullable="false" />
+    <Property Type="Int32" Name="SalesTypeID" Nullable="false" />
+    <Property Type="String" Name="SalesType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ReversalDetailID" Nullable="true" />
+  </ComplexType>
+</Schema>

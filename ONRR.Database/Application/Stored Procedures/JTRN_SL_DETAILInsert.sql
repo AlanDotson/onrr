@@ -1,0 +1,89 @@
+﻿
+CREATE PROCEDURE [Application].[JTRN_SL_DETAILInsert] @OPER_BUS_SEG_CD VARCHAR(6)
+    ,@ACCTG_MTH DATETIME
+    ,@ACCT_NO VARCHAR(20)
+    ,@TRANS_VAL_AMT NUMERIC
+    ,@TRANS_QTY NUMERIC
+    ,@BTU_FACT NUMERIC
+    ,@GRS_AMT NUMERIC
+    ,@GRS_QTY NUMERIC
+    ,@MAJ_PROD_CD VARCHAR(3)
+    ,@PROD_CD VARCHAR(3)
+    ,@OWNR_BA_NO VARCHAR(10)
+    ,@OWNR_INT_DEC NUMERIC
+    ,@CTR_PTY_NO VARCHAR(10)
+    ,@PROP_NO VARCHAR(10)
+    ,@DO_TYPE_CD VARCHAR(3)
+    ,@DO_MAJ_PROD_CD VARCHAR(3)
+    ,@TIER INT
+    ,@PPN_RSN_CD VARCHAR(10)
+    ,@PRDN_DT DATETIME
+    ,@ST_CD CHAR(2)
+    ,@MMBTU_OWNR_VOL NUMERIC
+    ,@WELL_NO VARCHAR(10)
+    ,@COMPL_NO CHAR(2)
+    ,@DISP_CD NCHAR(10)
+    ,@NET_VOL NUMERIC
+    ,@NewID INT OUTPUT
+AS
+SET NOCOUNT ON
+
+INSERT INTO [dbo].[JTRN_SL_DETAIL] (
+    OPER_BUS_SEG_CD
+    ,ACCTG_MTH
+    ,ACCT_NO
+    ,TRANS_VAL_AMT
+    ,TRANS_QTY
+    ,BTU_FACT
+    ,GRS_AMT
+    ,GRS_QTY
+    ,MAJ_PROD_CD
+    ,PROD_CD
+    ,OWNR_BA_NO
+    ,OWNR_INT_DEC
+    ,CTR_PTY_NO
+    ,PROP_NO
+    ,DO_TYPE_CD
+    ,DO_MAJ_PROD_CD
+    ,TIER
+    ,PPN_RSN_CD
+    ,PRDN_DT
+    ,ST_CD
+    ,MMBTU_OWNR_VOL
+    ,WELL_NO
+    ,COMPL_NO
+    ,DISP_CD
+    ,NET_VOL
+    )
+VALUES (
+    @OPER_BUS_SEG_CD
+    ,@ACCTG_MTH
+    ,@ACCT_NO
+    ,@TRANS_VAL_AMT
+    ,@TRANS_QTY
+    ,@BTU_FACT
+    ,@GRS_AMT
+    ,@GRS_QTY
+    ,@MAJ_PROD_CD
+    ,@PROD_CD
+    ,@OWNR_BA_NO
+    ,@OWNR_INT_DEC
+    ,@CTR_PTY_NO
+    ,@PROP_NO
+    ,@DO_TYPE_CD
+    ,@DO_MAJ_PROD_CD
+    ,@TIER
+    ,@PPN_RSN_CD
+    ,@PRDN_DT
+    ,@ST_CD
+    ,@MMBTU_OWNR_VOL
+    ,@WELL_NO
+    ,@COMPL_NO
+    ,@DISP_CD
+    ,@NET_VOL
+    )
+
+SET @NewID = @@Identity
+
+
+

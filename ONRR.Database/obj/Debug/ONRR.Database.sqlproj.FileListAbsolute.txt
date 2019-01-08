@@ -1,0 +1,9 @@
+C:\code\Web Applications\ONRR\ONRR.Database\bin\Debug\ONRR.Database.dacpac
+C:\code\Web Applications\ONRR\ONRR.Database\bin\Debug\ONRR.Database.dll
+C:\code\Web Applications\ONRR\ONRR.Database\bin\Debug\ONRR.Database.pdb
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\ONRR.Database.dll
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\ONRR.Database.pdb
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\Model.xml
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\refactor.xml
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\postdeploy.sql
+C:\code\Web Applications\ONRR\ONRR.Database\obj\Debug\predeploy.sql

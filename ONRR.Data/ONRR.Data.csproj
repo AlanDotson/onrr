@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D7A4384-887A-49A1-85C2-CCBE84A167BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QEP.ONRR.Data</RootNamespace>
+    <AssemblyName>QEP.ONRR.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContracts\AdjustmentReasonCodesDto.cs" />
+    <Compile Include="DataContracts\AgreementClassificationsDto.cs" />
+    <Compile Include="DataContracts\AgreementTypesDto.cs" />
+    <Compile Include="DataContracts\BIAClassificationsDto.cs" />
+    <Compile Include="DataContracts\CodeTableDto.cs" />
+    <Compile Include="DataContracts\CompanyPayorCodesDto.cs" />
+    <Compile Include="DataContracts\FileDto.cs" />
+    <Compile Include="DataContracts\JtranDto.cs" />
+    <Compile Include="DataContracts\AggregateDto.cs" />
+    <Compile Include="DataContracts\DetailDto.cs" />
+    <Compile Include="DataContracts\LeaseClassificationsDto.cs" />
+    <Compile Include="DataContracts\ONRRTransactionCodesDto.cs" />
+    <Compile Include="DataContracts\PaymentMethodsDto.cs" />
+    <Compile Include="DataContracts\PayorCodesDto.cs" />
+    <Compile Include="DataContracts\ProductCodeCrossReferenceDto.cs" />
+    <Compile Include="DataContracts\SalesTypeDto.cs" />
+    <Compile Include="DataContracts\StatesDto.cs" />
+    <Compile Include="DataContracts\WellLeaseAgreementDto.cs" />
+    <Compile Include="DataContracts\WellDto.cs" />
+    <Compile Include="Models\AccountingMonthSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountingMonthSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdjustmentReasonCodesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdjustmentReasonCodesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementClassificationsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementClassificationsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementLeaseSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementTypesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgreementTypesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BIAClassificationsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BIAClassificationsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyPayorCodesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyPayorCodesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JTRN_SL_DETAILSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JTRN_SL_DETAILSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContracts\LeaseAgreementDto.cs" />
+    <Compile Include="Models\LeaseAgreementSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContracts\AgreementDto.cs" />
+    <Compile Include="Models\LeaseAgreementsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaseAgreementsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaseClassificationsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeaseClassificationsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataContracts\LeaseDto.cs" />
+    <Compile Include="Models\LeasesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LeasesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRAggregateSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRAggregateSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDatabase.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ONRRDatabase.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDatabase.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ONRRDatabase.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDetailSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDetailSelectByAggregate_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDetailSelectFiltered_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRDetailSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRFilesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRFilesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRTransactionCodesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ONRRTransactionCodesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethodsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethodsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayorCodesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PayorCodesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductCodeCrossReferenceSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductCodeCrossReferenceSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RevenueDeductionsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RevenueDeductionsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesTypesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesTypesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatesSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatesSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WellCompletionsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WellCompletionsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WellLeaseAgreementSelectByWell_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WellLeaseAgreementsSelectAll_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WellLeaseAgreementsSelect_Result.cs">
+      <DependentUpon>ONRRDatabase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ONRRService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\ONRRDatabase.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ONRRDatabase.edmx</DependentUpon>
+      <LastGenOutput>ONRRDatabase.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ONRRDatabase.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ONRRDatabase.edmx</DependentUpon>
+      <LastGenOutput>ONRRDatabase.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Models\ONRRDatabase.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ONRRDatabase.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ONRRDatabase.edmx.diagram">
+      <DependentUpon>ONRRDatabase.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

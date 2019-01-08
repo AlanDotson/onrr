@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QEP.ONRR.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="AccountingMonthInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="OpenDate" Type="datetime" Mode="In" />
+    <Parameter Name="CloseDate" Type="datetime" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AccountingMonthSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AccountingMonth" Type="date" Mode="In" />
+  </Function>
+  <Function Name="AccountingMonthSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="AccountingMonthUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AccountingMonth" Type="date" Mode="In" />
+    <Parameter Name="OpenDate" Type="datetime" Mode="In" />
+    <Parameter Name="CloseDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AdjustmentReasonCodesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AdjustmentReasonCode" Type="varchar" Mode="In" />
+    <Parameter Name="AdjustmentReason" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AdjustmentReasonCodesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AdjustmentReasonCodesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="AdjustmentReasonCodesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentReasonCode" Type="varchar" Mode="In" />
+    <Parameter Name="AdjustmentReason" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="AgreementClassificationsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementClassification" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AgreementClassificationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementClassificationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AgreementClassificationsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="AgreementClassificationsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementClassificationID" Type="int" Mode="In" />
+    <Parameter Name="AgreementClassification" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="AgreementLeaseSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AgreementsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRAgreementID" Type="varchar" Mode="In" />
+    <Parameter Name="BLMSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ONRRAgreementDescription" Type="varchar" Mode="In" />
+    <Parameter Name="Formation" Type="varchar" Mode="In" />
+    <Parameter Name="AgreementClassificationID" Type="int" Mode="In" />
+    <Parameter Name="AgreementTypeID" Type="int" Mode="In" />
+    <Parameter Name="TotalAcreage" Type="decimal" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AgreementsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AgreementsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="AgreementsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementID" Type="int" Mode="In" />
+    <Parameter Name="ONRRAgreementID" Type="varchar" Mode="In" />
+    <Parameter Name="BLMSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="ONRRAgreementDescription" Type="varchar" Mode="In" />
+    <Parameter Name="Formation" Type="varchar" Mode="In" />
+    <Parameter Name="AgreementClassificationID" Type="int" Mode="In" />
+    <Parameter Name="AgreementTypeID" Type="int" Mode="In" />
+    <Parameter Name="TotalAcreage" Type="decimal" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AgreementTypesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementType" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AgreementTypesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AgreementTypesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="AgreementTypesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AgreementTypeID" Type="int" Mode="In" />
+    <Parameter Name="AgreementType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="BIAClassificationsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="BIAClassification" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="BIAClassificationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="BIAClassificationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="BIAClassificationsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="BIAClassificationsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="BIAClassificationID" Type="int" Mode="In" />
+    <Parameter Name="BIAClassification" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="CompanyPayorCodesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="QRACompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="ONRRPayorCode" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="CompanyPayorCodesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CompanyPayorCodesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="CompanyPayorCodesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="QRACompanyCode" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="ONRRPayorCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="JTRN_SL_DETAILInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="OPER_BUS_SEG_CD" Type="varchar" Mode="In" />
+    <Parameter Name="ACCTG_MTH" Type="datetime" Mode="In" />
+    <Parameter Name="ACCT_NO" Type="varchar" Mode="In" />
+    <Parameter Name="TRANS_VAL_AMT" Type="numeric" Mode="In" />
+    <Parameter Name="TRANS_QTY" Type="numeric" Mode="In" />
+    <Parameter Name="BTU_FACT" Type="numeric" Mode="In" />
+    <Parameter Name="GRS_AMT" Type="numeric" Mode="In" />
+    <Parameter Name="GRS_QTY" Type="numeric" Mode="In" />
+    <Parameter Name="MAJ_PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="OWNR_BA_NO" Type="varchar" Mode="In" />
+    <Parameter Name="OWNR_INT_DEC" Type="numeric" Mode="In" />
+    <Parameter Name="CTR_PTY_NO" Type="varchar" Mode="In" />
+    <Parameter Name="PROP_NO" Type="varchar" Mode="In" />
+    <Parameter Name="DO_TYPE_CD" Type="varchar" Mode="In" />
+    <Parameter Name="DO_MAJ_PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="TIER" Type="int" Mode="In" />
+    <Parameter Name="PPN_RSN_CD" Type="varchar" Mode="In" />
+    <Parameter Name="PRDN_DT" Type="datetime" Mode="In" />
+    <Parameter Name="ST_CD" Type="char" Mode="In" />
+    <Parameter Name="MMBTU_OWNR_VOL" Type="numeric" Mode="In" />
+    <Parameter Name="WELL_NO" Type="varchar" Mode="In" />
+    <Parameter Name="COMPL_NO" Type="char" Mode="In" />
+    <Parameter Name="DISP_CD" Type="nchar" Mode="In" />
+    <Parameter Name="NET_VOL" Type="numeric" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="JTRN_SL_DETAILSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="SL_DETAIL_NO" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="JTRN_SL_DETAILSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="JTRN_SL_DETAILUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="SL_DETAIL_NO" Type="bigint" Mode="In" />
+    <Parameter Name="OPER_BUS_SEG_CD" Type="varchar" Mode="In" />
+    <Parameter Name="ACCTG_MTH" Type="datetime" Mode="In" />
+    <Parameter Name="ACCT_NO" Type="varchar" Mode="In" />
+    <Parameter Name="TRANS_VAL_AMT" Type="numeric" Mode="In" />
+    <Parameter Name="TRANS_QTY" Type="numeric" Mode="In" />
+    <Parameter Name="BTU_FACT" Type="numeric" Mode="In" />
+    <Parameter Name="GRS_AMT" Type="numeric" Mode="In" />
+    <Parameter Name="GRS_QTY" Type="numeric" Mode="In" />
+    <Parameter Name="MAJ_PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="OWNR_BA_NO" Type="varchar" Mode="In" />
+    <Parameter Name="OWNR_INT_DEC" Type="numeric" Mode="In" />
+    <Parameter Name="CTR_PTY_NO" Type="varchar" Mode="In" />
+    <Parameter Name="PROP_NO" Type="varchar" Mode="In" />
+    <Parameter Name="DO_TYPE_CD" Type="varchar" Mode="In" />
+    <Parameter Name="DO_MAJ_PROD_CD" Type="varchar" Mode="In" />
+    <Parameter Name="TIER" Type="int" Mode="In" />
+    <Parameter Name="PPN_RSN_CD" Type="varchar" Mode="In" />
+    <Parameter Name="PRDN_DT" Type="datetime" Mode="In" />
+    <Parameter Name="ST_CD" Type="char" Mode="In" />
+    <Parameter Name="MMBTU_OWNR_VOL" Type="numeric" Mode="In" />
+    <Parameter Name="WELL_NO" Type="varchar" Mode="In" />
+    <Parameter Name="COMPL_NO" Type="char" Mode="In" />
+    <Parameter Name="DISP_CD" Type="nchar" Mode="In" />
+    <Parameter Name="NET_VOL" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="LeaseAgreementSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeaseAgreementsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+    <Parameter Name="AgreementID" Type="int" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="TractFactor" Type="decimal" Mode="In" />
+    <Parameter Name="OverrideTractFactor" Type="decimal" Mode="In" />
+    <Parameter Name="MarketShare" Type="decimal" Mode="In" />
+    <Parameter Name="TractAcreage" Type="decimal" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="LeaseAgreementsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeaseAgreementsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="LeaseAgreementsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+    <Parameter Name="AgreementID" Type="int" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="TractFactor" Type="decimal" Mode="In" />
+    <Parameter Name="OverrideTractFactor" Type="decimal" Mode="In" />
+    <Parameter Name="MarketShare" Type="decimal" Mode="In" />
+    <Parameter Name="TractAcreage" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="LeaseClassificationsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="QLSClassificationID" Type="varchar" Mode="In" />
+    <Parameter Name="Classification" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="LeaseClassificationsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseClassificationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeaseClassificationsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="LeaseClassificationsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseClassificationID" Type="int" Mode="In" />
+    <Parameter Name="QLSClassificationID" Type="varchar" Mode="In" />
+    <Parameter Name="Classification" Type="varchar" Mode="In" />
+    <Parameter Name="Active" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="LeasesDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeasesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRLeaseID" Type="varchar" Mode="In" />
+    <Parameter Name="BLMSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="QEPLeaseID" Type="varchar" Mode="In" />
+    <Parameter Name="QEPLeaseName" Type="varchar" Mode="In" />
+    <Parameter Name="LeaseClassificationID" Type="int" Mode="In" />
+    <Parameter Name="BIAClassificationID" Type="int" Mode="In" />
+    <Parameter Name="QEPEffectiveDate" Type="date" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="County" Type="varchar" Mode="In" />
+    <Parameter Name="RoyaltyRate" Type="decimal" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="LeasesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LeasesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="LeasesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseID" Type="int" Mode="In" />
+    <Parameter Name="ONRRLeaseID" Type="varchar" Mode="In" />
+    <Parameter Name="BLMSerialNumber" Type="varchar" Mode="In" />
+    <Parameter Name="QEPLeaseID" Type="varchar" Mode="In" />
+    <Parameter Name="QEPLeaseName" Type="varchar" Mode="In" />
+    <Parameter Name="LeaseClassificationID" Type="int" Mode="In" />
+    <Parameter Name="BIAClassificationID" Type="int" Mode="In" />
+    <Parameter Name="QEPEffectiveDate" Type="date" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="County" Type="varchar" Mode="In" />
+    <Parameter Name="RoyaltyRate" Type="decimal" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRAggregateInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="ProductionMonth" Type="date" Mode="In" />
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="GasMMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="SalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="GrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="TransortationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="ProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="NetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="FileID" Type="int" Mode="In" />
+    <Parameter Name="PADNumber" Type="varchar" Mode="In" />
+    <Parameter Name="PayorCodeID" Type="int" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="PaymentMethodID" Type="int" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ONRRAggregateSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AggregateID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRAggregateSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="ONRRAggregateUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AggregateID" Type="int" Mode="In" />
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="ProductionMonth" Type="date" Mode="In" />
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="GasMMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="SalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="GrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="TransortationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="ProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="NetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="FileID" Type="int" Mode="In" />
+    <Parameter Name="PADNumber" Type="varchar" Mode="In" />
+    <Parameter Name="PayorCodeID" Type="int" Mode="In" />
+    <Parameter Name="StatusID" Type="int" Mode="In" />
+    <Parameter Name="PaymentMethodID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRDetailInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRDetailID" Type="int" Mode="In" />
+    <Parameter Name="GrossAmount" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossAmount" Type="numeric" Mode="In" />
+    <Parameter Name="GrossQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="TransactionValueAmount" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransactionValueAmount" Type="numeric" Mode="In" />
+    <Parameter Name="TransactionQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransactionQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="Price" Type="numeric" Mode="In" />
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="CompanyMarketedVolume" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideCompanyMarketedVolume" Type="numeric" Mode="In" />
+    <Parameter Name="CompanyMarketedValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideCompanyMarketedValue" Type="numeric" Mode="In" />
+    <Parameter Name="SalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideSalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="MMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideMMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="SalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideSalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="GrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="TransportationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransportationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="ProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="NetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideNetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="AggregateID" Type="int" Mode="In" />
+    <Parameter Name="ReversalAggregateID" Type="int" Mode="In" />
+    <Parameter Name="AccountingMonth" Type="date" Mode="In" />
+    <Parameter Name="ProductionMonth" Type="date" Mode="In" />
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+    <Parameter Name="ProcessingStatusID" Type="int" Mode="In" />
+    <Parameter Name="SuspendReasonID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="ReversalDetailID" Type="int" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ONRRDetailSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRDetailID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="ONRRDetailSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="ONRRDetailSelectByAggregate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AggregateID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRDetailSelectFiltered" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="ONRRDetailUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRDetailID" Type="int" Mode="In" />
+    <Parameter Name="SL_DETAIL_NO" Type="bigint" Mode="In" />
+    <Parameter Name="GrossAmount" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossAmount" Type="numeric" Mode="In" />
+    <Parameter Name="GrossQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="TransactionValueAmount" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransactionValueAmount" Type="numeric" Mode="In" />
+    <Parameter Name="TransactionQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransactionQuantity" Type="numeric" Mode="In" />
+    <Parameter Name="Price" Type="numeric" Mode="In" />
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="CompanyMarketedVolume" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideCompanyMarketedVolume" Type="numeric" Mode="In" />
+    <Parameter Name="CompanyMarketedValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideCompanyMarketedValue" Type="numeric" Mode="In" />
+    <Parameter Name="SalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideSalesVolume" Type="numeric" Mode="In" />
+    <Parameter Name="MMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideMMBTU" Type="numeric" Mode="In" />
+    <Parameter Name="SalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideSalesValue" Type="numeric" Mode="In" />
+    <Parameter Name="GrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideGrossRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="TransportationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideTransportationAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="ProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideProcessingAllowanceDeduction" Type="numeric" Mode="In" />
+    <Parameter Name="NetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="OverrideNetRoyaltyValue" Type="numeric" Mode="In" />
+    <Parameter Name="AggregateID" Type="int" Mode="In" />
+    <Parameter Name="ReversalAggregateID" Type="int" Mode="In" />
+    <Parameter Name="AccountingMonth" Type="date" Mode="In" />
+    <Parameter Name="ProductionMonth" Type="date" Mode="In" />
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentReasonCodeID" Type="int" Mode="In" />
+    <Parameter Name="ProcessingStatusID" Type="int" Mode="In" />
+    <Parameter Name="SuspendReasonID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="ReversalDetailID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRFilesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="FileStatusID" Type="int" Mode="In" />
+    <Parameter Name="GenerationDate" Type="datetime" Mode="In" />
+    <Parameter Name="AcceptedDate" Type="date" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ONRRFilesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="FileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRFilesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="ONRRFilesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="FileID" Type="int" Mode="In" />
+    <Parameter Name="FileStatusID" Type="int" Mode="In" />
+    <Parameter Name="GenerationDate" Type="datetime" Mode="In" />
+    <Parameter Name="AcceptedDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="ONRRTransactionCodesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRTransactionCode" Type="varchar" Mode="In" />
+    <Parameter Name="ProductCode" Type="varchar" Mode="In" />
+    <Parameter Name="DispositionCode" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ONRRTransactionCodesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ONRRTransactionCodesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="ONRRTransactionCodesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="TransactionCodeID" Type="int" Mode="In" />
+    <Parameter Name="ONRRTransactionCode" Type="varchar" Mode="In" />
+    <Parameter Name="ProductCode" Type="varchar" Mode="In" />
+    <Parameter Name="DispositionCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PaymentMethodsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PaymentMethod" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="PaymentMethodsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PaymentMethodID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PaymentMethodsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="PaymentMethodsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PaymentMethodID" Type="int" Mode="In" />
+    <Parameter Name="PaymentMethod" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PayorCodesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PayorCode" Type="varchar" Mode="In" />
+    <Parameter Name="Payor" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="PayorCodesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PayorCodeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PayorCodesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="PayorCodesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PayorCodeID" Type="int" Mode="In" />
+    <Parameter Name="PayorCode" Type="varchar" Mode="In" />
+    <Parameter Name="Payor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ProductCodeCrossReferenceInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ONRRProductCode" Type="varchar" Mode="In" />
+    <Parameter Name="QRAMajorProductCode" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ProductCodeCrossReferenceSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ProductCodeCrossReferenceSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="ProductCodeCrossReferenceUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="ONRRProductCode" Type="varchar" Mode="In" />
+    <Parameter Name="QRAMajorProductCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="RevenueDeductionsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="AdjustmentCategoryCode" Type="varchar" Mode="In" />
+    <Parameter Name="AdjustmentCategory" Type="varchar" Mode="In" />
+    <Parameter Name="LandExemptFlag" Type="bit" Mode="In" />
+    <Parameter Name="MMSTransportationDeductFlag" Type="bit" Mode="In" />
+    <Parameter Name="NMEXTransportationDeductFlag" Type="bit" Mode="In" />
+    <Parameter Name="MMSProcessingAllowanceFlag" Type="bit" Mode="In" />
+    <Parameter Name="NMEXProcessingAllowanceFlag" Type="bit" Mode="In" />
+    <Parameter Name="AllocationOrder" Type="int" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="RevenueDeductionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="RevenueDeductionID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RevenueDeductionsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="RevenueDeductionsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="RevenueDeductionID" Type="int" Mode="In" />
+    <Parameter Name="AdjustmentCategoryCode" Type="varchar" Mode="In" />
+    <Parameter Name="AdjustmentCategory" Type="varchar" Mode="In" />
+    <Parameter Name="LandExemptFlag" Type="bit" Mode="In" />
+    <Parameter Name="MMSTransportationDeductFlag" Type="bit" Mode="In" />
+    <Parameter Name="NMEXTransportationDeductFlag" Type="bit" Mode="In" />
+    <Parameter Name="MMSProcessingAllowanceFlag" Type="bit" Mode="In" />
+    <Parameter Name="NMEXProcessingAllowanceFlag" Type="bit" Mode="In" />
+    <Parameter Name="AllocationOrder" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SalesTypesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="SalesType" Type="varchar" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SalesTypesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SalesTypesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="SalesTypesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="SalesType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="StatesInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="PressureBase" Type="decimal" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="StatesSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+  </Function>
+  <Function Name="StatesSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="StatesUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="PressureBase" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="WellCompletionsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="PropertyNumber" Type="varchar" Mode="In" />
+    <Parameter Name="WellAcreage" Type="decimal" Mode="In" />
+    <Parameter Name="WellCompletionName" Type="varchar" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="API" Type="varchar" Mode="In" />
+    <Parameter Name="Company" Type="varchar" Mode="In" />
+    <Parameter Name="PropertyName" Type="varchar" Mode="In" />
+    <Parameter Name="GrossMarketedInterest" Type="decimal" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="WellCompletionsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellCompletionID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WellCompletionsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="WellCompletionsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellCompletionID" Type="varchar" Mode="In" />
+    <Parameter Name="PropertyNumber" Type="varchar" Mode="In" />
+    <Parameter Name="WellAcreage" Type="decimal" Mode="In" />
+    <Parameter Name="WellCompletionName" Type="varchar" Mode="In" />
+    <Parameter Name="StateCode" Type="char" Mode="In" />
+    <Parameter Name="API" Type="varchar" Mode="In" />
+    <Parameter Name="Company" Type="varchar" Mode="In" />
+    <Parameter Name="PropertyName" Type="varchar" Mode="In" />
+    <Parameter Name="GrossMarketedInterest" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="WellLeaseAgreementSelectByWell" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellCompletionID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WellLeaseAgreementsInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellCompletionID" Type="varchar" Mode="In" />
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+    <Parameter Name="NewID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="WellLeaseAgreementsSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellLeaseAgreementID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="WellLeaseAgreementsSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application" />
+  <Function Name="WellLeaseAgreementsUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Application">
+    <Parameter Name="WellLeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="WellCompletionID" Type="varchar" Mode="In" />
+    <Parameter Name="LeaseAgreementID" Type="int" Mode="In" />
+    <Parameter Name="ProductCodeID" Type="int" Mode="In" />
+    <Parameter Name="SalesTypeID" Type="int" Mode="In" />
+    <Parameter Name="EffectiveFrom" Type="date" Mode="In" />
+    <Parameter Name="EffectiveTo" Type="date" Mode="In" />
+  </Function>
+  <Function Name="AccountingMonthCurrentSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ETL" />
+  <EntityContainer Name="QEPONRRDataStoreContainer" />
+</Schema>

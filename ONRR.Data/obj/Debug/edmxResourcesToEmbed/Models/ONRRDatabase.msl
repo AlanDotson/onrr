@@ -1,0 +1,923 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QEPONRRDataStoreContainer" CdmEntityContainer="ONRRDatabaseEntities">
+    <FunctionImportMapping FunctionImportName="LeasesDelete" FunctionName="QEP.ONRR.Data.Store.LeasesDelete" />
+    <FunctionImportMapping FunctionImportName="LeasesInsert" FunctionName="QEP.ONRR.Data.Store.LeasesInsert" />
+    <FunctionImportMapping FunctionImportName="LeasesUpdate" FunctionName="QEP.ONRR.Data.Store.LeasesUpdate" />
+    <FunctionImportMapping FunctionImportName="AgreementsSelectAll" FunctionName="QEP.ONRR.Data.Store.AgreementsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementsSelectAll_Result">
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="ONRRAgreementID" ColumnName="ONRRAgreementID" />
+          <ScalarProperty Name="BLMSerialNumber" ColumnName="BLMSerialNumber" />
+          <ScalarProperty Name="ONRRAgreementDescription" ColumnName="ONRRAgreementDescription" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="AgreementClassificationID" ColumnName="AgreementClassificationID" />
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="TotalAcreage" ColumnName="TotalAcreage" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="AgreementClassification" ColumnName="AgreementClassification" />
+          <ScalarProperty Name="AgreementType" ColumnName="AgreementType" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgreementClassificationsSelectAll" FunctionName="QEP.ONRR.Data.Store.AgreementClassificationsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementClassificationsSelectAll_Result">
+          <ScalarProperty Name="AgreementClassificationID" ColumnName="AgreementClassificationID" />
+          <ScalarProperty Name="AgreementClassification" ColumnName="AgreementClassification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgreementTypesSelectAll" FunctionName="QEP.ONRR.Data.Store.AgreementTypesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementTypesSelectAll_Result">
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="AgreementType" ColumnName="AgreementType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BIAClassificationsSelectAll" FunctionName="QEP.ONRR.Data.Store.BIAClassificationsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.BIAClassificationsSelectAll_Result">
+          <ScalarProperty Name="BIAClassificationID" ColumnName="BIAClassificationID" />
+          <ScalarProperty Name="BIAClassification" ColumnName="BIAClassification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StatesSelectAll" FunctionName="QEP.ONRR.Data.Store.StatesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.StatesSelectAll_Result">
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="PressureBase" ColumnName="PressureBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseAgreementSelect" FunctionName="QEP.ONRR.Data.Store.LeaseAgreementSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeaseAgreementSelect_Result">
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="QEPLeaseName" ColumnName="QEPLeaseName" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="ONRRAgreementDescription" ColumnName="ONRRAgreementDescription" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="TractFactor" ColumnName="TractFactor" />
+          <ScalarProperty Name="OverrideTractFactor" ColumnName="OverrideTractFactor" />
+          <ScalarProperty Name="MarketShare" ColumnName="MarketShare" />
+          <ScalarProperty Name="TractAcreage" ColumnName="TractAcreage" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeasesSelectAll" FunctionName="QEP.ONRR.Data.Store.LeasesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeasesSelectAll_Result">
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="ONRRLeaseID" ColumnName="ONRRLeaseID" />
+          <ScalarProperty Name="BLMSerialNumber" ColumnName="BLMSerialNumber" />
+          <ScalarProperty Name="QEPLeaseID" ColumnName="QEPLeaseID" />
+          <ScalarProperty Name="QEPLeaseName" ColumnName="QEPLeaseName" />
+          <ScalarProperty Name="LeaseClassificationID" ColumnName="LeaseClassificationID" />
+          <ScalarProperty Name="BIAClassificationID" ColumnName="BIAClassificationID" />
+          <ScalarProperty Name="QEPEffectiveDate" ColumnName="QEPEffectiveDate" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="RoyaltyRate" ColumnName="RoyaltyRate" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BIAClassification" ColumnName="BIAClassification" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeasesSelect" FunctionName="QEP.ONRR.Data.Store.LeasesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeasesSelect_Result">
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="ONRRLeaseID" ColumnName="ONRRLeaseID" />
+          <ScalarProperty Name="BLMSerialNumber" ColumnName="BLMSerialNumber" />
+          <ScalarProperty Name="QEPLeaseID" ColumnName="QEPLeaseID" />
+          <ScalarProperty Name="QEPLeaseName" ColumnName="QEPLeaseName" />
+          <ScalarProperty Name="LeaseClassificationID" ColumnName="LeaseClassificationID" />
+          <ScalarProperty Name="BIAClassificationID" ColumnName="BIAClassificationID" />
+          <ScalarProperty Name="QEPEffectiveDate" ColumnName="QEPEffectiveDate" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="RoyaltyRate" ColumnName="RoyaltyRate" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="BIAClassification" ColumnName="BIAClassification" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseAgreementsInsert" FunctionName="QEP.ONRR.Data.Store.LeaseAgreementsInsert" />
+    <FunctionImportMapping FunctionImportName="LeaseAgreementsUpdate" FunctionName="QEP.ONRR.Data.Store.LeaseAgreementsUpdate" />
+    <FunctionImportMapping FunctionImportName="AccountingMonthInsert" FunctionName="QEP.ONRR.Data.Store.AccountingMonthInsert" />
+    <FunctionImportMapping FunctionImportName="AccountingMonthSelect" FunctionName="QEP.ONRR.Data.Store.AccountingMonthSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AccountingMonthSelect_Result">
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AccountingMonthSelectAll" FunctionName="QEP.ONRR.Data.Store.AccountingMonthSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AccountingMonthSelectAll_Result">
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AccountingMonthUpdate" FunctionName="QEP.ONRR.Data.Store.AccountingMonthUpdate" />
+    <FunctionImportMapping FunctionImportName="AdjustmentReasonCodesInsert" FunctionName="QEP.ONRR.Data.Store.AdjustmentReasonCodesInsert" />
+    <FunctionImportMapping FunctionImportName="AdjustmentReasonCodesSelect" FunctionName="QEP.ONRR.Data.Store.AdjustmentReasonCodesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AdjustmentReasonCodesSelect_Result">
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCode" ColumnName="AdjustmentReasonCode" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AdjustmentReasonCodesSelectAll" FunctionName="QEP.ONRR.Data.Store.AdjustmentReasonCodesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AdjustmentReasonCodesSelectAll_Result">
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCode" ColumnName="AdjustmentReasonCode" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AdjustmentReasonCodesUpdate" FunctionName="QEP.ONRR.Data.Store.AdjustmentReasonCodesUpdate" />
+    <FunctionImportMapping FunctionImportName="AgreementClassificationsInsert" FunctionName="QEP.ONRR.Data.Store.AgreementClassificationsInsert" />
+    <FunctionImportMapping FunctionImportName="AgreementClassificationsSelect" FunctionName="QEP.ONRR.Data.Store.AgreementClassificationsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementClassificationsSelect_Result">
+          <ScalarProperty Name="AgreementClassificationID" ColumnName="AgreementClassificationID" />
+          <ScalarProperty Name="AgreementClassification" ColumnName="AgreementClassification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgreementClassificationsUpdate" FunctionName="QEP.ONRR.Data.Store.AgreementClassificationsUpdate" />
+    <FunctionImportMapping FunctionImportName="AgreementsInsert" FunctionName="QEP.ONRR.Data.Store.AgreementsInsert" />
+    <FunctionImportMapping FunctionImportName="AgreementsSelect" FunctionName="QEP.ONRR.Data.Store.AgreementsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementsSelect_Result">
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="ONRRAgreementID" ColumnName="ONRRAgreementID" />
+          <ScalarProperty Name="BLMSerialNumber" ColumnName="BLMSerialNumber" />
+          <ScalarProperty Name="ONRRAgreementDescription" ColumnName="ONRRAgreementDescription" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+          <ScalarProperty Name="AgreementClassificationID" ColumnName="AgreementClassificationID" />
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="TotalAcreage" ColumnName="TotalAcreage" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="AgreementClassification" ColumnName="AgreementClassification" />
+          <ScalarProperty Name="AgreementType" ColumnName="AgreementType" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgreementsUpdate" FunctionName="QEP.ONRR.Data.Store.AgreementsUpdate" />
+    <FunctionImportMapping FunctionImportName="AgreementTypesInsert" FunctionName="QEP.ONRR.Data.Store.AgreementTypesInsert" />
+    <FunctionImportMapping FunctionImportName="AgreementTypesSelect" FunctionName="QEP.ONRR.Data.Store.AgreementTypesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementTypesSelect_Result">
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="AgreementType" ColumnName="AgreementType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AgreementTypesUpdate" FunctionName="QEP.ONRR.Data.Store.AgreementTypesUpdate" />
+    <FunctionImportMapping FunctionImportName="BIAClassificationsInsert" FunctionName="QEP.ONRR.Data.Store.BIAClassificationsInsert" />
+    <FunctionImportMapping FunctionImportName="BIAClassificationsSelect" FunctionName="QEP.ONRR.Data.Store.BIAClassificationsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.BIAClassificationsSelect_Result">
+          <ScalarProperty Name="BIAClassificationID" ColumnName="BIAClassificationID" />
+          <ScalarProperty Name="BIAClassification" ColumnName="BIAClassification" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="BIAClassificationsUpdate" FunctionName="QEP.ONRR.Data.Store.BIAClassificationsUpdate" />
+    <FunctionImportMapping FunctionImportName="CompanyPayorCodesInsert" FunctionName="QEP.ONRR.Data.Store.CompanyPayorCodesInsert" />
+    <FunctionImportMapping FunctionImportName="CompanyPayorCodesSelect" FunctionName="QEP.ONRR.Data.Store.CompanyPayorCodesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.CompanyPayorCodesSelect_Result">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="QRACompanyCode" ColumnName="QRACompanyCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ONRRPayorCode" ColumnName="ONRRPayorCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CompanyPayorCodesSelectAll" FunctionName="QEP.ONRR.Data.Store.CompanyPayorCodesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.CompanyPayorCodesSelectAll_Result">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="QRACompanyCode" ColumnName="QRACompanyCode" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ONRRPayorCode" ColumnName="ONRRPayorCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CompanyPayorCodesUpdate" FunctionName="QEP.ONRR.Data.Store.CompanyPayorCodesUpdate" />
+    <FunctionImportMapping FunctionImportName="JTRN_SL_DETAILInsert" FunctionName="QEP.ONRR.Data.Store.JTRN_SL_DETAILInsert" />
+    <FunctionImportMapping FunctionImportName="JTRN_SL_DETAILSelect" FunctionName="QEP.ONRR.Data.Store.JTRN_SL_DETAILSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.JTRN_SL_DETAILSelect_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="OPER_BUS_SEG_CD" ColumnName="OPER_BUS_SEG_CD" />
+          <ScalarProperty Name="ACCTG_MTH" ColumnName="ACCTG_MTH" />
+          <ScalarProperty Name="ACCT_NO" ColumnName="ACCT_NO" />
+          <ScalarProperty Name="TRANS_VAL_AMT" ColumnName="TRANS_VAL_AMT" />
+          <ScalarProperty Name="TRANS_QTY" ColumnName="TRANS_QTY" />
+          <ScalarProperty Name="BTU_FACT" ColumnName="BTU_FACT" />
+          <ScalarProperty Name="GRS_AMT" ColumnName="GRS_AMT" />
+          <ScalarProperty Name="GRS_QTY" ColumnName="GRS_QTY" />
+          <ScalarProperty Name="MAJ_PROD_CD" ColumnName="MAJ_PROD_CD" />
+          <ScalarProperty Name="PROD_CD" ColumnName="PROD_CD" />
+          <ScalarProperty Name="OWNR_BA_NO" ColumnName="OWNR_BA_NO" />
+          <ScalarProperty Name="OWNR_INT_DEC" ColumnName="OWNR_INT_DEC" />
+          <ScalarProperty Name="CTR_PTY_NO" ColumnName="CTR_PTY_NO" />
+          <ScalarProperty Name="PROP_NO" ColumnName="PROP_NO" />
+          <ScalarProperty Name="DO_TYPE_CD" ColumnName="DO_TYPE_CD" />
+          <ScalarProperty Name="DO_MAJ_PROD_CD" ColumnName="DO_MAJ_PROD_CD" />
+          <ScalarProperty Name="TIER" ColumnName="TIER" />
+          <ScalarProperty Name="PPN_RSN_CD" ColumnName="PPN_RSN_CD" />
+          <ScalarProperty Name="PRDN_DT" ColumnName="PRDN_DT" />
+          <ScalarProperty Name="ST_CD" ColumnName="ST_CD" />
+          <ScalarProperty Name="MMBTU_OWNR_VOL" ColumnName="MMBTU_OWNR_VOL" />
+          <ScalarProperty Name="WELL_NO" ColumnName="WELL_NO" />
+          <ScalarProperty Name="COMPL_NO" ColumnName="COMPL_NO" />
+          <ScalarProperty Name="ADJ_CTGY_CD" ColumnName="ADJ_CTGY_CD" />
+          <ScalarProperty Name="NET_AMT" ColumnName="NET_AMT" />
+          <ScalarProperty Name="DISP_CD" ColumnName="DISP_CD" />
+          <ScalarProperty Name="NET_VOL" ColumnName="NET_VOL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="JTRN_SL_DETAILSelectAll" FunctionName="QEP.ONRR.Data.Store.JTRN_SL_DETAILSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.JTRN_SL_DETAILSelectAll_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="OPER_BUS_SEG_CD" ColumnName="OPER_BUS_SEG_CD" />
+          <ScalarProperty Name="ACCTG_MTH" ColumnName="ACCTG_MTH" />
+          <ScalarProperty Name="ACCT_NO" ColumnName="ACCT_NO" />
+          <ScalarProperty Name="TRANS_VAL_AMT" ColumnName="TRANS_VAL_AMT" />
+          <ScalarProperty Name="TRANS_QTY" ColumnName="TRANS_QTY" />
+          <ScalarProperty Name="BTU_FACT" ColumnName="BTU_FACT" />
+          <ScalarProperty Name="GRS_AMT" ColumnName="GRS_AMT" />
+          <ScalarProperty Name="GRS_QTY" ColumnName="GRS_QTY" />
+          <ScalarProperty Name="MAJ_PROD_CD" ColumnName="MAJ_PROD_CD" />
+          <ScalarProperty Name="PROD_CD" ColumnName="PROD_CD" />
+          <ScalarProperty Name="OWNR_BA_NO" ColumnName="OWNR_BA_NO" />
+          <ScalarProperty Name="OWNR_INT_DEC" ColumnName="OWNR_INT_DEC" />
+          <ScalarProperty Name="CTR_PTY_NO" ColumnName="CTR_PTY_NO" />
+          <ScalarProperty Name="PROP_NO" ColumnName="PROP_NO" />
+          <ScalarProperty Name="DO_TYPE_CD" ColumnName="DO_TYPE_CD" />
+          <ScalarProperty Name="DO_MAJ_PROD_CD" ColumnName="DO_MAJ_PROD_CD" />
+          <ScalarProperty Name="TIER" ColumnName="TIER" />
+          <ScalarProperty Name="PPN_RSN_CD" ColumnName="PPN_RSN_CD" />
+          <ScalarProperty Name="PRDN_DT" ColumnName="PRDN_DT" />
+          <ScalarProperty Name="ST_CD" ColumnName="ST_CD" />
+          <ScalarProperty Name="MMBTU_OWNR_VOL" ColumnName="MMBTU_OWNR_VOL" />
+          <ScalarProperty Name="WELL_NO" ColumnName="WELL_NO" />
+          <ScalarProperty Name="COMPL_NO" ColumnName="COMPL_NO" />
+          <ScalarProperty Name="ADJ_CTGY_CD" ColumnName="ADJ_CTGY_CD" />
+          <ScalarProperty Name="NET_AMT" ColumnName="NET_AMT" />
+          <ScalarProperty Name="DISP_CD" ColumnName="DISP_CD" />
+          <ScalarProperty Name="NET_VOL" ColumnName="NET_VOL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="JTRN_SL_DETAILUpdate" FunctionName="QEP.ONRR.Data.Store.JTRN_SL_DETAILUpdate" />
+    <FunctionImportMapping FunctionImportName="LeaseAgreementsSelect" FunctionName="QEP.ONRR.Data.Store.LeaseAgreementsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeaseAgreementsSelect_Result">
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="TractFactor" ColumnName="TractFactor" />
+          <ScalarProperty Name="OverrideTractFactor" ColumnName="OverrideTractFactor" />
+          <ScalarProperty Name="MarketShare" ColumnName="MarketShare" />
+          <ScalarProperty Name="TractAcreage" ColumnName="TractAcreage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseAgreementsSelectAll" FunctionName="QEP.ONRR.Data.Store.LeaseAgreementsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeaseAgreementsSelectAll_Result">
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="TractFactor" ColumnName="TractFactor" />
+          <ScalarProperty Name="OverrideTractFactor" ColumnName="OverrideTractFactor" />
+          <ScalarProperty Name="MarketShare" ColumnName="MarketShare" />
+          <ScalarProperty Name="TractAcreage" ColumnName="TractAcreage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseClassificationsInsert" FunctionName="QEP.ONRR.Data.Store.LeaseClassificationsInsert" />
+    <FunctionImportMapping FunctionImportName="LeaseClassificationsSelect" FunctionName="QEP.ONRR.Data.Store.LeaseClassificationsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeaseClassificationsSelect_Result">
+          <ScalarProperty Name="LeaseClassificationID" ColumnName="LeaseClassificationID" />
+          <ScalarProperty Name="QLSClassificationID" ColumnName="QLSClassificationID" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseClassificationsSelectAll" FunctionName="QEP.ONRR.Data.Store.LeaseClassificationsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.LeaseClassificationsSelectAll_Result">
+          <ScalarProperty Name="LeaseClassificationID" ColumnName="LeaseClassificationID" />
+          <ScalarProperty Name="QLSClassificationID" ColumnName="QLSClassificationID" />
+          <ScalarProperty Name="Classification" ColumnName="Classification" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="LeaseClassificationsUpdate" FunctionName="QEP.ONRR.Data.Store.LeaseClassificationsUpdate" />
+    <FunctionImportMapping FunctionImportName="ONRRAggregateInsert" FunctionName="QEP.ONRR.Data.Store.ONRRAggregateInsert" />
+    <FunctionImportMapping FunctionImportName="ONRRAggregateSelect" FunctionName="QEP.ONRR.Data.Store.ONRRAggregateSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRAggregateSelect_Result">
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="GasMMBTU" ColumnName="GasMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="TransortationAllowanceDeduction" ColumnName="TransortationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="PADNumber" ColumnName="PADNumber" />
+          <ScalarProperty Name="PayorCodeID" ColumnName="PayorCodeID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRAggregateSelectAll" FunctionName="QEP.ONRR.Data.Store.ONRRAggregateSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRAggregateSelectAll_Result">
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="GasMMBTU" ColumnName="GasMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="TransortationAllowanceDeduction" ColumnName="TransortationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="PADNumber" ColumnName="PADNumber" />
+          <ScalarProperty Name="PayorCodeID" ColumnName="PayorCodeID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRAggregateUpdate" FunctionName="QEP.ONRR.Data.Store.ONRRAggregateUpdate" />
+    <FunctionImportMapping FunctionImportName="ONRRDetailInsert" FunctionName="QEP.ONRR.Data.Store.ONRRDetailInsert" />
+    <FunctionImportMapping FunctionImportName="ONRRDetailSelect" FunctionName="QEP.ONRR.Data.Store.ONRRDetailSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRDetailSelect_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="OverrideGrossAmount" ColumnName="OverrideGrossAmount" />
+          <ScalarProperty Name="GrossQuantity" ColumnName="GrossQuantity" />
+          <ScalarProperty Name="OverrideGrossQuantity" ColumnName="OverrideGrossQuantity" />
+          <ScalarProperty Name="TransactionValueAmount" ColumnName="TransactionValueAmount" />
+          <ScalarProperty Name="OverrideTransactionValueAmount" ColumnName="OverrideTransactionValueAmount" />
+          <ScalarProperty Name="TransactionQuantity" ColumnName="TransactionQuantity" />
+          <ScalarProperty Name="OverrideTransactionQuantity" ColumnName="OverrideTransactionQuantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CompanyMarketedVolume" ColumnName="CompanyMarketedVolume" />
+          <ScalarProperty Name="OverrideCompanyMarketedVolume" ColumnName="OverrideCompanyMarketedVolume" />
+          <ScalarProperty Name="CompanyMarketedValue" ColumnName="CompanyMarketedValue" />
+          <ScalarProperty Name="OverrideCompanyMarketedValue" ColumnName="OverrideCompanyMarketedValue" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="OverrideSalesVolume" ColumnName="OverrideSalesVolume" />
+          <ScalarProperty Name="MMBTU" ColumnName="MMBTU" />
+          <ScalarProperty Name="OverrideMMBTU" ColumnName="OverrideMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="OverrideSalesValue" ColumnName="OverrideSalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="OverrideGrossRoyaltyValue" ColumnName="OverrideGrossRoyaltyValue" />
+          <ScalarProperty Name="TransportationAllowanceDeduction" ColumnName="TransportationAllowanceDeduction" />
+          <ScalarProperty Name="OverrideTransportationAllowanceDeduction" ColumnName="OverrideTransportationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="OverrideProcessingAllowanceDeduction" ColumnName="OverrideProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="OverrideNetRoyaltyValue" ColumnName="OverrideNetRoyaltyValue" />
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="ReversalAggregateID" ColumnName="ReversalAggregateID" />
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="ProcessingStatusID" ColumnName="ProcessingStatusID" />
+          <ScalarProperty Name="SuspendReasonID" ColumnName="SuspendReasonID" />
+          <ScalarProperty Name="ONRRDetailID" ColumnName="ONRRDetailID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="ReversalDetailID" ColumnName="ReversalDetailID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRDetailSelectAll" FunctionName="QEP.ONRR.Data.Store.ONRRDetailSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRDetailSelectAll_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="OverrideGrossAmount" ColumnName="OverrideGrossAmount" />
+          <ScalarProperty Name="GrossQuantity" ColumnName="GrossQuantity" />
+          <ScalarProperty Name="OverrideGrossQuantity" ColumnName="OverrideGrossQuantity" />
+          <ScalarProperty Name="TransactionValueAmount" ColumnName="TransactionValueAmount" />
+          <ScalarProperty Name="OverrideTransactionValueAmount" ColumnName="OverrideTransactionValueAmount" />
+          <ScalarProperty Name="TransactionQuantity" ColumnName="TransactionQuantity" />
+          <ScalarProperty Name="OverrideTransactionQuantity" ColumnName="OverrideTransactionQuantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="CompanyMarketedVolume" ColumnName="CompanyMarketedVolume" />
+          <ScalarProperty Name="OverrideCompanyMarketedVolume" ColumnName="OverrideCompanyMarketedVolume" />
+          <ScalarProperty Name="CompanyMarketedValue" ColumnName="CompanyMarketedValue" />
+          <ScalarProperty Name="OverrideCompanyMarketedValue" ColumnName="OverrideCompanyMarketedValue" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="OverrideSalesVolume" ColumnName="OverrideSalesVolume" />
+          <ScalarProperty Name="MMBTU" ColumnName="MMBTU" />
+          <ScalarProperty Name="OverrideMMBTU" ColumnName="OverrideMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="OverrideSalesValue" ColumnName="OverrideSalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="OverrideGrossRoyaltyValue" ColumnName="OverrideGrossRoyaltyValue" />
+          <ScalarProperty Name="TransportationAllowanceDeduction" ColumnName="TransportationAllowanceDeduction" />
+          <ScalarProperty Name="OverrideTransportationAllowanceDeduction" ColumnName="OverrideTransportationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="OverrideProcessingAllowanceDeduction" ColumnName="OverrideProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="OverrideNetRoyaltyValue" ColumnName="OverrideNetRoyaltyValue" />
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="ReversalAggregateID" ColumnName="ReversalAggregateID" />
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="ProcessingStatusID" ColumnName="ProcessingStatusID" />
+          <ScalarProperty Name="SuspendReasonID" ColumnName="SuspendReasonID" />
+          <ScalarProperty Name="ONRRDetailID" ColumnName="ONRRDetailID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="ReversalDetailID" ColumnName="ReversalDetailID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRDetailUpdate" FunctionName="QEP.ONRR.Data.Store.ONRRDetailUpdate" />
+    <FunctionImportMapping FunctionImportName="ONRRFilesInsert" FunctionName="QEP.ONRR.Data.Store.ONRRFilesInsert" />
+    <FunctionImportMapping FunctionImportName="ONRRFilesSelect" FunctionName="QEP.ONRR.Data.Store.ONRRFilesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRFilesSelect_Result">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileStatusID" ColumnName="FileStatusID" />
+          <ScalarProperty Name="GenerationDate" ColumnName="GenerationDate" />
+          <ScalarProperty Name="AcceptedDate" ColumnName="AcceptedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRFilesSelectAll" FunctionName="QEP.ONRR.Data.Store.ONRRFilesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRFilesSelectAll_Result">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileStatusID" ColumnName="FileStatusID" />
+          <ScalarProperty Name="GenerationDate" ColumnName="GenerationDate" />
+          <ScalarProperty Name="AcceptedDate" ColumnName="AcceptedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRFilesUpdate" FunctionName="QEP.ONRR.Data.Store.ONRRFilesUpdate" />
+    <FunctionImportMapping FunctionImportName="ONRRTransactionCodesInsert" FunctionName="QEP.ONRR.Data.Store.ONRRTransactionCodesInsert" />
+    <FunctionImportMapping FunctionImportName="ONRRTransactionCodesSelect" FunctionName="QEP.ONRR.Data.Store.ONRRTransactionCodesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRTransactionCodesSelect_Result">
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRTransactionCodesSelectAll" FunctionName="QEP.ONRR.Data.Store.ONRRTransactionCodesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRTransactionCodesSelectAll_Result">
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRTransactionCodesUpdate" FunctionName="QEP.ONRR.Data.Store.ONRRTransactionCodesUpdate" />
+    <FunctionImportMapping FunctionImportName="PaymentMethodsInsert" FunctionName="QEP.ONRR.Data.Store.PaymentMethodsInsert" />
+    <FunctionImportMapping FunctionImportName="PaymentMethodsSelect" FunctionName="QEP.ONRR.Data.Store.PaymentMethodsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.PaymentMethodsSelect_Result">
+          <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PaymentMethodsSelectAll" FunctionName="QEP.ONRR.Data.Store.PaymentMethodsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.PaymentMethodsSelectAll_Result">
+          <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PaymentMethodsUpdate" FunctionName="QEP.ONRR.Data.Store.PaymentMethodsUpdate" />
+    <FunctionImportMapping FunctionImportName="PayorCodesInsert" FunctionName="QEP.ONRR.Data.Store.PayorCodesInsert" />
+    <FunctionImportMapping FunctionImportName="PayorCodesSelect" FunctionName="QEP.ONRR.Data.Store.PayorCodesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.PayorCodesSelect_Result">
+          <ScalarProperty Name="PayorCodeID" ColumnName="PayorCodeID" />
+          <ScalarProperty Name="PayorCode" ColumnName="PayorCode" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PayorCodesSelectAll" FunctionName="QEP.ONRR.Data.Store.PayorCodesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.PayorCodesSelectAll_Result">
+          <ScalarProperty Name="PayorCodeID" ColumnName="PayorCodeID" />
+          <ScalarProperty Name="PayorCode" ColumnName="PayorCode" />
+          <ScalarProperty Name="Payor" ColumnName="Payor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PayorCodesUpdate" FunctionName="QEP.ONRR.Data.Store.PayorCodesUpdate" />
+    <FunctionImportMapping FunctionImportName="ProductCodeCrossReferenceInsert" FunctionName="QEP.ONRR.Data.Store.ProductCodeCrossReferenceInsert" />
+    <FunctionImportMapping FunctionImportName="ProductCodeCrossReferenceSelect" FunctionName="QEP.ONRR.Data.Store.ProductCodeCrossReferenceSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ProductCodeCrossReferenceSelect_Result">
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProductCodeCrossReferenceSelectAll" FunctionName="QEP.ONRR.Data.Store.ProductCodeCrossReferenceSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ProductCodeCrossReferenceSelectAll_Result">
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ProductCodeCrossReferenceUpdate" FunctionName="QEP.ONRR.Data.Store.ProductCodeCrossReferenceUpdate" />
+    <FunctionImportMapping FunctionImportName="RevenueDeductionsInsert" FunctionName="QEP.ONRR.Data.Store.RevenueDeductionsInsert" />
+    <FunctionImportMapping FunctionImportName="RevenueDeductionsSelect" FunctionName="QEP.ONRR.Data.Store.RevenueDeductionsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.RevenueDeductionsSelect_Result">
+          <ScalarProperty Name="RevenueDeductionID" ColumnName="RevenueDeductionID" />
+          <ScalarProperty Name="AdjustmentCategoryCode" ColumnName="AdjustmentCategoryCode" />
+          <ScalarProperty Name="AdjustmentCategory" ColumnName="AdjustmentCategory" />
+          <ScalarProperty Name="LandExemptFlag" ColumnName="LandExemptFlag" />
+          <ScalarProperty Name="MMSTransportationDeductFlag" ColumnName="MMSTransportationDeductFlag" />
+          <ScalarProperty Name="NMEXTransportationDeductFlag" ColumnName="NMEXTransportationDeductFlag" />
+          <ScalarProperty Name="MMSProcessingAllowanceFlag" ColumnName="MMSProcessingAllowanceFlag" />
+          <ScalarProperty Name="NMEXProcessingAllowanceFlag" ColumnName="NMEXProcessingAllowanceFlag" />
+          <ScalarProperty Name="AllocationOrder" ColumnName="AllocationOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RevenueDeductionsSelectAll" FunctionName="QEP.ONRR.Data.Store.RevenueDeductionsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.RevenueDeductionsSelectAll_Result">
+          <ScalarProperty Name="RevenueDeductionID" ColumnName="RevenueDeductionID" />
+          <ScalarProperty Name="AdjustmentCategoryCode" ColumnName="AdjustmentCategoryCode" />
+          <ScalarProperty Name="AdjustmentCategory" ColumnName="AdjustmentCategory" />
+          <ScalarProperty Name="LandExemptFlag" ColumnName="LandExemptFlag" />
+          <ScalarProperty Name="MMSTransportationDeductFlag" ColumnName="MMSTransportationDeductFlag" />
+          <ScalarProperty Name="NMEXTransportationDeductFlag" ColumnName="NMEXTransportationDeductFlag" />
+          <ScalarProperty Name="MMSProcessingAllowanceFlag" ColumnName="MMSProcessingAllowanceFlag" />
+          <ScalarProperty Name="NMEXProcessingAllowanceFlag" ColumnName="NMEXProcessingAllowanceFlag" />
+          <ScalarProperty Name="AllocationOrder" ColumnName="AllocationOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RevenueDeductionsUpdate" FunctionName="QEP.ONRR.Data.Store.RevenueDeductionsUpdate" />
+    <FunctionImportMapping FunctionImportName="SalesTypesInsert" FunctionName="QEP.ONRR.Data.Store.SalesTypesInsert" />
+    <FunctionImportMapping FunctionImportName="SalesTypesSelect" FunctionName="QEP.ONRR.Data.Store.SalesTypesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.SalesTypesSelect_Result">
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SalesTypesSelectAll" FunctionName="QEP.ONRR.Data.Store.SalesTypesSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.SalesTypesSelectAll_Result">
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SalesTypesUpdate" FunctionName="QEP.ONRR.Data.Store.SalesTypesUpdate" />
+    <FunctionImportMapping FunctionImportName="StatesInsert" FunctionName="QEP.ONRR.Data.Store.StatesInsert" />
+    <FunctionImportMapping FunctionImportName="StatesSelect" FunctionName="QEP.ONRR.Data.Store.StatesSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.StatesSelect_Result">
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="PressureBase" ColumnName="PressureBase" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="StatesUpdate" FunctionName="QEP.ONRR.Data.Store.StatesUpdate" />
+    <FunctionImportMapping FunctionImportName="WellCompletionsInsert" FunctionName="QEP.ONRR.Data.Store.WellCompletionsInsert" />
+    <FunctionImportMapping FunctionImportName="WellCompletionsSelect" FunctionName="QEP.ONRR.Data.Store.WellCompletionsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.WellCompletionsSelect_Result">
+          <ScalarProperty Name="WellCompletionID" ColumnName="WellCompletionID" />
+          <ScalarProperty Name="PropertyNumber" ColumnName="PropertyNumber" />
+          <ScalarProperty Name="WellAcreage" ColumnName="WellAcreage" />
+          <ScalarProperty Name="WellCompletionName" ColumnName="WellCompletionName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="API" ColumnName="API" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="GrossMarketedInterest" ColumnName="GrossMarketedInterest" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WellCompletionsSelectAll" FunctionName="QEP.ONRR.Data.Store.WellCompletionsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.WellCompletionsSelectAll_Result">
+          <ScalarProperty Name="WellCompletionID" ColumnName="WellCompletionID" />
+          <ScalarProperty Name="PropertyNumber" ColumnName="PropertyNumber" />
+          <ScalarProperty Name="WellAcreage" ColumnName="WellAcreage" />
+          <ScalarProperty Name="WellCompletionName" ColumnName="WellCompletionName" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="API" ColumnName="API" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+          <ScalarProperty Name="GrossMarketedInterest" ColumnName="GrossMarketedInterest" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WellCompletionsUpdate" FunctionName="QEP.ONRR.Data.Store.WellCompletionsUpdate" />
+    <FunctionImportMapping FunctionImportName="WellLeaseAgreementsInsert" FunctionName="QEP.ONRR.Data.Store.WellLeaseAgreementsInsert" />
+    <FunctionImportMapping FunctionImportName="WellLeaseAgreementsSelect" FunctionName="QEP.ONRR.Data.Store.WellLeaseAgreementsSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.WellLeaseAgreementsSelect_Result">
+          <ScalarProperty Name="WellLeaseAgreementID" ColumnName="WellLeaseAgreementID" />
+          <ScalarProperty Name="WellCompletionID" ColumnName="WellCompletionID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WellLeaseAgreementsSelectAll" FunctionName="QEP.ONRR.Data.Store.WellLeaseAgreementsSelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.WellLeaseAgreementsSelectAll_Result">
+          <ScalarProperty Name="WellLeaseAgreementID" ColumnName="WellLeaseAgreementID" />
+          <ScalarProperty Name="WellCompletionID" ColumnName="WellCompletionID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WellLeaseAgreementsUpdate" FunctionName="QEP.ONRR.Data.Store.WellLeaseAgreementsUpdate" />
+    <FunctionImportMapping FunctionImportName="AgreementLeaseSelect" FunctionName="QEP.ONRR.Data.Store.AgreementLeaseSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.AgreementLeaseSelect_Result">
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="LeaseID" ColumnName="LeaseID" />
+          <ScalarProperty Name="QEPLeaseName" ColumnName="QEPLeaseName" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="ONRRAgreementDescription" ColumnName="ONRRAgreementDescription" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="TractFactor" ColumnName="TractFactor" />
+          <ScalarProperty Name="OverrideTractFactor" ColumnName="OverrideTractFactor" />
+          <ScalarProperty Name="MarketShare" ColumnName="MarketShare" />
+          <ScalarProperty Name="TractAcreage" ColumnName="TractAcreage" />
+          <ScalarProperty Name="Formation" ColumnName="Formation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="WellLeaseAgreementSelectByWell" FunctionName="QEP.ONRR.Data.Store.WellLeaseAgreementSelectByWell">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.WellLeaseAgreementSelectByWell_Result">
+          <ScalarProperty Name="WellLeaseAgreementID" ColumnName="WellLeaseAgreementID" />
+          <ScalarProperty Name="WellCompletionID" ColumnName="WellCompletionID" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AccountingMonthCurrentSelect" FunctionName="QEP.ONRR.Data.Store.AccountingMonthCurrentSelect" />
+    <FunctionImportMapping FunctionImportName="ONRRDetailSelectByAggregate" FunctionName="QEP.ONRR.Data.Store.ONRRDetailSelectByAggregate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRDetailSelectByAggregate_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="OverrideGrossAmount" ColumnName="OverrideGrossAmount" />
+          <ScalarProperty Name="GrossQuantity" ColumnName="GrossQuantity" />
+          <ScalarProperty Name="OverrideGrossQuantity" ColumnName="OverrideGrossQuantity" />
+          <ScalarProperty Name="TransactionValueAmount" ColumnName="TransactionValueAmount" />
+          <ScalarProperty Name="OverrideTransactionValueAmount" ColumnName="OverrideTransactionValueAmount" />
+          <ScalarProperty Name="TransactionQuantity" ColumnName="TransactionQuantity" />
+          <ScalarProperty Name="OverrideTransactionQuantity" ColumnName="OverrideTransactionQuantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CompanyMarketedVolume" ColumnName="CompanyMarketedVolume" />
+          <ScalarProperty Name="OverrideCompanyMarketedVolume" ColumnName="OverrideCompanyMarketedVolume" />
+          <ScalarProperty Name="CompanyMarketedValue" ColumnName="CompanyMarketedValue" />
+          <ScalarProperty Name="OverrideCompanyMarketedValue" ColumnName="OverrideCompanyMarketedValue" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="OverrideSalesVolume" ColumnName="OverrideSalesVolume" />
+          <ScalarProperty Name="MMBTU" ColumnName="MMBTU" />
+          <ScalarProperty Name="OverrideMMBTU" ColumnName="OverrideMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="OverrideSalesValue" ColumnName="OverrideSalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="OverrideGrossRoyaltyValue" ColumnName="OverrideGrossRoyaltyValue" />
+          <ScalarProperty Name="TransportationAllowanceDeduction" ColumnName="TransportationAllowanceDeduction" />
+          <ScalarProperty Name="OverrideTransportationAllowanceDeduction" ColumnName="OverrideTransportationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="OverrideProcessingAllowanceDeduction" ColumnName="OverrideProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="OverrideNetRoyaltyValue" ColumnName="OverrideNetRoyaltyValue" />
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="ReversalAggregateID" ColumnName="ReversalAggregateID" />
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+          <ScalarProperty Name="ProcessingStatusID" ColumnName="ProcessingStatusID" />
+          <ScalarProperty Name="SuspendReasonID" ColumnName="SuspendReasonID" />
+          <ScalarProperty Name="ONRRDetailID" ColumnName="ONRRDetailID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ReversalDetailID" ColumnName="ReversalDetailID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ONRRDetailSelectFiltered" FunctionName="QEP.ONRR.Data.Store.ONRRDetailSelectFiltered">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QEP.ONRR.Data.ONRRDetailSelectFiltered_Result">
+          <ScalarProperty Name="SL_DETAIL_NO" ColumnName="SL_DETAIL_NO" />
+          <ScalarProperty Name="GrossAmount" ColumnName="GrossAmount" />
+          <ScalarProperty Name="OverrideGrossAmount" ColumnName="OverrideGrossAmount" />
+          <ScalarProperty Name="GrossQuantity" ColumnName="GrossQuantity" />
+          <ScalarProperty Name="OverrideGrossQuantity" ColumnName="OverrideGrossQuantity" />
+          <ScalarProperty Name="TransactionValueAmount" ColumnName="TransactionValueAmount" />
+          <ScalarProperty Name="OverrideTransactionValueAmount" ColumnName="OverrideTransactionValueAmount" />
+          <ScalarProperty Name="TransactionQuantity" ColumnName="TransactionQuantity" />
+          <ScalarProperty Name="OverrideTransactionQuantity" ColumnName="OverrideTransactionQuantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LeaseAgreementID" ColumnName="LeaseAgreementID" />
+          <ScalarProperty Name="ProductCodeID" ColumnName="ProductCodeID" />
+          <ScalarProperty Name="ONRRProductCode" ColumnName="ONRRProductCode" />
+          <ScalarProperty Name="QRAMajorProductCode" ColumnName="QRAMajorProductCode" />
+          <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CompanyMarketedVolume" ColumnName="CompanyMarketedVolume" />
+          <ScalarProperty Name="OverrideCompanyMarketedVolume" ColumnName="OverrideCompanyMarketedVolume" />
+          <ScalarProperty Name="CompanyMarketedValue" ColumnName="CompanyMarketedValue" />
+          <ScalarProperty Name="OverrideCompanyMarketedValue" ColumnName="OverrideCompanyMarketedValue" />
+          <ScalarProperty Name="SalesVolume" ColumnName="SalesVolume" />
+          <ScalarProperty Name="OverrideSalesVolume" ColumnName="OverrideSalesVolume" />
+          <ScalarProperty Name="MMBTU" ColumnName="MMBTU" />
+          <ScalarProperty Name="OverrideMMBTU" ColumnName="OverrideMMBTU" />
+          <ScalarProperty Name="SalesValue" ColumnName="SalesValue" />
+          <ScalarProperty Name="OverrideSalesValue" ColumnName="OverrideSalesValue" />
+          <ScalarProperty Name="GrossRoyaltyValue" ColumnName="GrossRoyaltyValue" />
+          <ScalarProperty Name="OverrideGrossRoyaltyValue" ColumnName="OverrideGrossRoyaltyValue" />
+          <ScalarProperty Name="TransportationAllowanceDeduction" ColumnName="TransportationAllowanceDeduction" />
+          <ScalarProperty Name="OverrideTransportationAllowanceDeduction" ColumnName="OverrideTransportationAllowanceDeduction" />
+          <ScalarProperty Name="ProcessingAllowanceDeduction" ColumnName="ProcessingAllowanceDeduction" />
+          <ScalarProperty Name="OverrideProcessingAllowanceDeduction" ColumnName="OverrideProcessingAllowanceDeduction" />
+          <ScalarProperty Name="NetRoyaltyValue" ColumnName="NetRoyaltyValue" />
+          <ScalarProperty Name="OverrideNetRoyaltyValue" ColumnName="OverrideNetRoyaltyValue" />
+          <ScalarProperty Name="AggregateID" ColumnName="AggregateID" />
+          <ScalarProperty Name="ReversalAggregateID" ColumnName="ReversalAggregateID" />
+          <ScalarProperty Name="AccountingMonth" ColumnName="AccountingMonth" />
+          <ScalarProperty Name="ProductionMonth" ColumnName="ProductionMonth" />
+          <ScalarProperty Name="TransactionCodeID" ColumnName="TransactionCodeID" />
+          <ScalarProperty Name="DispositionCode" ColumnName="DispositionCode" />
+          <ScalarProperty Name="ONRRTransactionCode" ColumnName="ONRRTransactionCode" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="AdjustmentReasonCodeID" ColumnName="AdjustmentReasonCodeID" />
+          <ScalarProperty Name="AdjustmentReason" ColumnName="AdjustmentReason" />
+          <ScalarProperty Name="ProcessingStatusID" ColumnName="ProcessingStatusID" />
+          <ScalarProperty Name="SuspendReasonID" ColumnName="SuspendReasonID" />
+          <ScalarProperty Name="ONRRDetailID" ColumnName="ONRRDetailID" />
+          <ScalarProperty Name="SalesTypeID" ColumnName="SalesTypeID" />
+          <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+          <ScalarProperty Name="ReversalDetailID" ColumnName="ReversalDetailID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
